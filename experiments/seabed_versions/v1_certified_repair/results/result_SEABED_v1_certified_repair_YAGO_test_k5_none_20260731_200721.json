@@ -1,0 +1,86 @@
+{
+  "version": "v1_certified_repair",
+  "config": {
+    "abs_path": "../",
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/model_save/YAGO_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_040001.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "YAGO",
+    "dataset_root": "/data/projects/SEABED-main/data/YAGO",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_test_pairs": 5,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v1_certified_repair",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "none",
+    "result_path": "experiments/seabed_versions/v1_certified_repair/results",
+    "save_pair_details": 0,
+    "tau": 1.0,
+    "test_k": 5,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/model_save/YAGO_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_040001.pt",
+  "num_pairs": 5,
+  "initial": {
+    "mse": 31.4,
+    "mae": 4.2,
+    "acc": 0.2,
+    "fea": 1.0
+  },
+  "final": {
+    "mse": 31.4,
+    "mae": 4.2,
+    "acc": 0.2,
+    "fea": 1.0
+  },
+  "repair": {
+    "improved_pair_rate": 0.0,
+    "average_cost_reduction": 0.0,
+    "max_cost_reduction": 0,
+    "initial_lower_bound_hit_rate": 0.2,
+    "final_lower_bound_hit_rate": 0.2,
+    "label_equals_lower_bound_rate": 1.0,
+    "average_initial_residual": 4.2,
+    "average_final_residual": 4.2,
+    "average_iterations": 0.0,
+    "average_candidates_evaluated": 0.0
+  },
+  "ranking": {
+    "rho": 0.158,
+    "tau": 0.222,
+    "pk1": 0.0,
+    "pk5": 1.0,
+    "pk10": 1.0,
+    "pk15": 1.0,
+    "pk20": 1.0
+  },
+  "time_per_pair": 0.19891,
+  "pair_details": null
+}

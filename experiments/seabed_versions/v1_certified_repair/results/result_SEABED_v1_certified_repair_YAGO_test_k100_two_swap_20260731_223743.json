@@ -1,0 +1,89 @@
+{
+  "version": "v1_certified_repair",
+  "repair_cost_revision": "deterministic_dense_v4",
+  "config": {
+    "abs_path": "../",
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/model_save/YAGO_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_040001.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "YAGO",
+    "dataset_root": "/data/projects/SEABED-main/data/YAGO",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_test_pairs": 0,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v1_certified_repair",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v1_certified_repair/results",
+    "save_pair_details": 0,
+    "tau": 1.0,
+    "test_k": 100,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/model_save/YAGO_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_040001.pt",
+  "num_pairs": 6000,
+  "initial": {
+    "mse": 5.525,
+    "mae": 0.843,
+    "acc": 0.778,
+    "fea": 1.0
+  },
+  "final": {
+    "mse": 2.877,
+    "mae": 0.473,
+    "acc": 0.873,
+    "fea": 1.0
+  },
+  "repair": {
+    "improved_pair_rate": 0.1307,
+    "average_cost_reduction": 0.37,
+    "max_cost_reduction": 16,
+    "initial_lower_bound_hit_rate": 0.7787,
+    "final_lower_bound_hit_rate": 0.8732,
+    "label_equals_evaluator_lower_bound_rate": 0.999,
+    "label_equals_graph_size_lower_bound_rate": 1.0,
+    "final_below_graph_size_lower_bound_rate": 0.0003,
+    "average_initial_residual": 0.8437,
+    "average_final_residual": 0.4737,
+    "average_iterations": 0.2045,
+    "average_candidates_evaluated": 97.04
+  },
+  "ranking": {
+    "rho": 0.956,
+    "tau": 0.922,
+    "pk1": 0.92,
+    "pk5": 0.943,
+    "pk10": 0.955,
+    "pk15": 0.957,
+    "pk20": 0.96
+  },
+  "time_per_pair": 0.16299,
+  "pair_details": null
+}

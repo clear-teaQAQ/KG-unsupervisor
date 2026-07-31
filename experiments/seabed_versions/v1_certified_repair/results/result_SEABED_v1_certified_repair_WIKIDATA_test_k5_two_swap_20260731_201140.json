@@ -1,0 +1,86 @@
+{
+  "version": "v1_certified_repair",
+  "config": {
+    "abs_path": "../",
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/model_save/WIKIDATA_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_062631.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "WIKIDATA",
+    "dataset_root": "/data/projects/SEABED-main/data/WIKIDATA",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_test_pairs": 100,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v1_certified_repair",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v1_certified_repair/results",
+    "save_pair_details": 0,
+    "tau": 1.0,
+    "test_k": 5,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/model_save/WIKIDATA_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_062631.pt",
+  "num_pairs": 100,
+  "initial": {
+    "mse": 37.38,
+    "mae": 4.28,
+    "acc": 0.22,
+    "fea": 0.95
+  },
+  "final": {
+    "mse": 5.37,
+    "mae": 1.15,
+    "acc": 0.64,
+    "fea": 0.95
+  },
+  "repair": {
+    "improved_pair_rate": 0.66,
+    "average_cost_reduction": 3.13,
+    "max_cost_reduction": 21,
+    "initial_lower_bound_hit_rate": 0.18,
+    "final_lower_bound_hit_rate": 0.51,
+    "label_equals_lower_bound_rate": 0.74,
+    "average_initial_residual": 4.48,
+    "average_final_residual": 1.35,
+    "average_iterations": 1.76,
+    "average_candidates_evaluated": 1159.35
+  },
+  "ranking": {
+    "rho": 0.895,
+    "tau": 0.808,
+    "pk1": 1.0,
+    "pk5": 0.9,
+    "pk10": 0.75,
+    "pk15": 0.867,
+    "pk20": 0.85
+  },
+  "time_per_pair": 0.2783,
+  "pair_details": null
+}
