@@ -1,0 +1,16 @@
+{
+  "version": "v10_kg_tie_aware_training",
+  "objective_revision": "ged_primary_exact_anchor_tie_v1",
+  "epochs": [
+    {
+      "epoch": 1,
+      "candidates": 16,
+      "candidate_anchors": 1.0,
+      "strict_ged_updates": 4,
+      "equal_ged_anchor_updates": 0,
+      "best_anchor_total": 1.0,
+      "available_anchor_total": 7.0,
+      "best_anchor_recall": 0.14285714285714285
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+{
+  "version": "v2_edit_path_audit",
+  "path_revision": "dual_executable_path_v1",
+  "frozen_inference_source": "v1_certified_repair/deterministic_dense_v4",
+  "config": {
+    "abs_path": "../",
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/model_save/LUBM_200_GEDRankerSEABED_main_col3_unit_BPR_20260726_215721.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "LUBM",
+    "dataset_root": "/data/projects/SEABED-main/data/LUBM",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_saved_paths": 100,
+    "max_test_pairs": 0,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v2_edit_path_audit",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v2_edit_path_audit/results",
+    "save_pair_details": 0,
+    "save_paths": 1,
+    "tau": 1.0,
+    "test_k": 100,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/model_save/LUBM_200_GEDRankerSEABED_main_col3_unit_BPR_20260726_215721.pt",
+  "num_pairs": 10000,
+  "semantics": {
+    "simple_graph": "undirected endpoint, one predicate, raw edge-list last-write-wins",
+    "multirelation": "undirected endpoint, complete predicate multiset",
+    "node_substitution_cost": 0,
+    "node_insertion_deletion_cost": 1,
+    "edge_insertion_deletion_cost": 1,
+    "relation_substitution_cost": 1
+  },
+  "v1_dense_reference": {
+    "initial": {
+      "mse": 0.135,
+      "mae": 0.11,
+      "acc": 0.901,
+      "fea": 1.0
+    },
+    "final": {
+      "mse": 0.125,
+      "mae": 0.102,
+      "acc": 0.908,
+      "fea": 1.0
+    },
+    "ranking": {
+      "rho": 0.971,
+      "tau": 0.952,
+      "pk1": 0.955,
+      "pk5": 0.956,
+      "pk10": 0.963,
+      "pk15": 0.968,
+      "pk20": 0.968
+    },
+    "improved_pair_rate": 0.0075,
+    "average_cost_reduction": 0.008
+  },
+  "simple_graph_path": {
+    "cost": {
+      "mse": 0.125,
+      "mae": 0.102,
+      "acc": 0.908,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.9083,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.1021,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 1.0,
+      "max_excess_cost": 3.0,
+      "mean_normalized_gap": 0.0123
+    },
+    "average_operation_cost": {
+      "node_insertions": 1.9516,
+      "node_deletions": 0.0,
+      "edge_insertions": 2.7479,
+      "edge_deletions": 0.6708,
+      "relation_substitutions": 3.3694
+    },
+    "ranking": {
+      "rho": 0.971,
+      "tau": 0.952,
+      "pk1": 0.955,
+      "pk5": 0.956,
+      "pk10": 0.963,
+      "pk15": 0.968,
+      "pk20": 0.968
+    },
+    "relation_preservation_rate": 0.2728
+  },
+  "multirelation_path": {
+    "cost": {
+      "mse": 0.125,
+      "mae": 0.102,
+      "acc": 0.908,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.9083,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.1021,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 1.0,
+      "max_excess_cost": 3.0,
+      "mean_normalized_gap": 0.0123
+    },
+    "average_operation_cost": {
+      "node_insertions": 1.9516,
+      "node_deletions": 0.0,
+      "edge_insertions": 2.7479,
+      "edge_deletions": 0.6708,
+      "relation_substitutions": 3.3694
+    },
+    "ranking": {
+      "rho": 0.971,
+      "tau": 0.952,
+      "pk1": 0.955,
+      "pk5": 0.956,
+      "pk10": 0.963,
+      "pk15": 0.968,
+      "pk20": 0.968
+    },
+    "relation_preservation_rate": 0.2728
+  },
+  "evaluator_disagreement": {
+    "simple_vs_v1_dense_rate": 0.0,
+    "multirelation_vs_v1_dense_rate": 0.0,
+    "simple_vs_multirelation_rate": 0.0,
+    "mean_simple_minus_v1_dense": 0.0,
+    "mean_multirelation_minus_v1_dense": 0.0,
+    "mean_multirelation_minus_simple": 0.0
+  },
+  "semantic_proxy": {
+    "shared_entities": 2119,
+    "aligned_shared_entities": 1417,
+    "shared_entity_alignment_rate": 0.6687,
+    "pairs_without_shared_entities_are_excluded": true
+  },
+  "repair": {
+    "average_iterations": 0.0077,
+    "average_candidates_evaluated": 30.12
+  },
+  "timing": {
+    "inference_seconds_per_pair": 0.10213,
+    "path_audit_seconds_per_pair": 0.00015
+  },
+  "saved_paths": 100,
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v2_edit_path_audit/results/paths_SEABED_v2_edit_path_audit_LUBM_test_k100_two_swap_20260801_133217.jsonl"
+}

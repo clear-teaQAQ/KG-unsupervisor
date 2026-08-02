@@ -1,0 +1,4793 @@
+{
+  "version": "v5_tie_space_audit",
+  "scope": "saved-path offline diagnostic; no model inference",
+  "dataset": "LUBM",
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v2_edit_path_audit/results/paths_SEABED_v2_edit_path_audit_LUBM_test_k100_two_swap_20260801_133217.jsonl",
+  "pairs": 100,
+  "shared_entities": 43,
+  "alignment": {
+    "initial": 27,
+    "initial_rate": 0.6279,
+    "id_local_oracle": 29,
+    "id_local_oracle_rate": 0.6744,
+    "embedding_tie_break": 29,
+    "embedding_tie_break_rate": 0.6744
+  },
+  "tie_space": {
+    "pairs_with_equal_cost_neighbor": 97,
+    "pairs_with_id_improving_neighbor": 2,
+    "pairs_improved_by_id_oracle": 2,
+    "pairs_improved_by_embedding": 2,
+    "pairs_harmed_by_embedding": 0
+  },
+  "cost_invariants": {
+    "simple_unchanged_rate": 1.0,
+    "multirelation_unchanged_rate": 1.0
+  },
+  "per_pair": [
+    {
+      "pair_index": 0,
+      "source_file": "graphPair_931.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          7,
+          4,
+          3,
+          1,
+          2,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          7,
+          5,
+          3,
+          1,
+          2,
+          0
+        ],
+        "initial_score": -0.7439872585016465,
+        "final_score": -0.6603914109382933,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 1,
+      "source_file": "graphPair_134.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          3,
+          1,
+          4,
+          2,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          3,
+          1,
+          5,
+          0,
+          6
+        ],
+        "initial_score": 0.9006127184685389,
+        "final_score": 1.4014114723180957,
+        "iterations": 4,
+        "candidates_evaluated": 175,
+        "equal_cost_candidates": 30,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 2,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_28.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 2,
+      "initial_aligned": 2,
+      "id_oracle_aligned": 2,
+      "embedding_aligned": 2,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          2,
+          0,
+          6,
+          5,
+          7,
+          8,
+          4
+        ],
+        "initial_score": 2.0,
+        "final_score": 2.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          1,
+          3,
+          0,
+          6,
+          5,
+          7,
+          8,
+          4
+        ],
+        "initial_score": 5.484545777981891,
+        "final_score": 5.5613549475811865,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 3,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_616.json",
+      "simple_cost": 6,
+      "multirelation_cost": 6,
+      "shared_entities": 2,
+      "initial_aligned": 2,
+      "id_oracle_aligned": 2,
+      "embedding_aligned": 2,
+      "id_oracle": {
+        "mapping": [
+          9,
+          3,
+          6,
+          0,
+          4,
+          1,
+          2,
+          5,
+          7
+        ],
+        "initial_score": 2.0,
+        "final_score": 2.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          9,
+          3,
+          6,
+          0,
+          4,
+          1,
+          2,
+          5,
+          8
+        ],
+        "initial_score": 4.582070630086324,
+        "final_score": 4.672133889831601,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 4,
+      "source_file": "graphPair_390.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          4,
+          3,
+          6,
+          1,
+          0,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          4,
+          3,
+          7,
+          1,
+          2,
+          6
+        ],
+        "initial_score": 0.5508566063236274,
+        "final_score": 0.6599917065186739,
+        "iterations": 2,
+        "candidates_evaluated": 105,
+        "equal_cost_candidates": 9,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 5,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_392.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          8,
+          6,
+          4,
+          2,
+          3,
+          1,
+          7,
+          0,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          6,
+          8,
+          2,
+          3,
+          1,
+          7,
+          0,
+          5
+        ],
+        "initial_score": -0.036886532878408124,
+        "final_score": -0.028898740280424634,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 6,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_465.json",
+      "simple_cost": 7,
+      "multirelation_cost": 7,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          3,
+          5,
+          6,
+          2,
+          8,
+          4,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          0,
+          3,
+          5,
+          6,
+          2,
+          8,
+          4,
+          7
+        ],
+        "initial_score": 0.05829243173033466,
+        "final_score": 0.05829243173033466,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 7,
+      "source_file": "graphPair_556.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          7,
+          3,
+          4,
+          1,
+          8,
+          6,
+          2
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          7,
+          4,
+          3,
+          1,
+          8,
+          6,
+          0
+        ],
+        "initial_score": -0.43789298429142676,
+        "final_score": 0.08341349269714168,
+        "iterations": 2,
+        "candidates_evaluated": 108,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 8,
+      "source_file": "graphPair_88.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 2,
+      "initial_aligned": 2,
+      "id_oracle_aligned": 2,
+      "embedding_aligned": 2,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          7,
+          0,
+          4,
+          8,
+          5,
+          6
+        ],
+        "initial_score": 2.0,
+        "final_score": 2.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          1,
+          7,
+          2,
+          4,
+          0,
+          5,
+          6
+        ],
+        "initial_score": 4.097377656216873,
+        "final_score": 4.280786307823531,
+        "iterations": 2,
+        "candidates_evaluated": 108,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 9,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_704.json",
+      "simple_cost": 7,
+      "multirelation_cost": 7,
+      "shared_entities": 2,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          4,
+          0,
+          3,
+          1,
+          6,
+          2,
+          8,
+          5,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          0,
+          3,
+          1,
+          6,
+          2,
+          8,
+          5,
+          7
+        ],
+        "initial_score": 2.071761020705368,
+        "final_score": 2.071761020705368,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 10,
+      "source_file": "graphPair_886.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          3,
+          7,
+          6,
+          8,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          3,
+          7,
+          6,
+          8,
+          4
+        ],
+        "initial_score": -0.325982227151632,
+        "final_score": -0.325982227151632,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 11,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_747.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          9,
+          8,
+          3,
+          0,
+          1,
+          2,
+          4,
+          6,
+          7
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          8,
+          9,
+          0,
+          1,
+          2,
+          5,
+          6,
+          7
+        ],
+        "initial_score": 3.8199768387163235,
+        "final_score": 3.9775109822655432,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 12,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_476.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          6,
+          8,
+          4,
+          9,
+          0,
+          1,
+          2,
+          3
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          8,
+          6,
+          5,
+          4,
+          9,
+          0,
+          1,
+          2,
+          3
+        ],
+        "initial_score": -0.39551960173083867,
+        "final_score": -0.2534127364964519,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 13,
+      "source_file": "graphPair_59.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          5,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 0.39756134637571255,
+        "final_score": 0.39756134637571255,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 14,
+      "source_file": "graphPair_50.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          5,
+          4,
+          1,
+          0,
+          7,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          5,
+          4,
+          1,
+          2,
+          7,
+          8
+        ],
+        "initial_score": 0.5951020851015226,
+        "final_score": 0.6094865796871142,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 15,
+      "source_file": "graphPair_349.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          7,
+          3,
+          4,
+          1,
+          6
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          7,
+          3,
+          1,
+          4,
+          6
+        ],
+        "initial_score": -0.0011333996561546378,
+        "final_score": 0.02096794776753841,
+        "iterations": 1,
+        "candidates_evaluated": 66,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 16,
+      "source_file": "graphPair_571.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          7,
+          6,
+          3,
+          8,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          7,
+          6,
+          3,
+          8,
+          4
+        ],
+        "initial_score": 0.23759700814568507,
+        "final_score": 0.23759700814568507,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 17,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_729.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          3,
+          4,
+          2,
+          5,
+          1,
+          0,
+          8,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          3,
+          7,
+          2,
+          5,
+          1,
+          0,
+          8,
+          9
+        ],
+        "initial_score": 1.3158066066366492,
+        "final_score": 1.4212049305188976,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 18,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_889.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          9,
+          5,
+          2,
+          4,
+          6,
+          0,
+          1,
+          3,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          5,
+          9,
+          4,
+          6,
+          0,
+          1,
+          3,
+          8
+        ],
+        "initial_score": 2.3371883985012327,
+        "final_score": 2.3589982224738733,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 19,
+      "source_file": "graphPair_376.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          4,
+          5,
+          1,
+          7,
+          6
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          4,
+          5,
+          1,
+          7,
+          6
+        ],
+        "initial_score": 3.299231575643584,
+        "final_score": 3.299231575643584,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 20,
+      "source_file": "graphPair_369.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          5,
+          4,
+          1,
+          2,
+          0
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          5,
+          4,
+          1,
+          0,
+          2
+        ],
+        "initial_score": 3.4516271920099806,
+        "final_score": 3.5360507648900574,
+        "iterations": 1,
+        "candidates_evaluated": 66,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 21,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_685.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          1,
+          6,
+          4,
+          8,
+          3,
+          7,
+          0,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          3,
+          2,
+          4,
+          8,
+          1,
+          7,
+          0,
+          5
+        ],
+        "initial_score": -0.17002942688431852,
+        "final_score": 0.23005452241663601,
+        "iterations": 2,
+        "candidates_evaluated": 108,
+        "equal_cost_candidates": 20,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 5
+      }
+    },
+    {
+      "pair_index": 22,
+      "source_file": "graphPair_737.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          3,
+          4,
+          5,
+          6,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          3,
+          4,
+          5,
+          7,
+          2
+        ],
+        "initial_score": 0.1696566415017829,
+        "final_score": 0.18455960616930445,
+        "iterations": 2,
+        "candidates_evaluated": 99,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 23,
+      "source_file": "graphPair_804.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          1,
+          6,
+          2,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          5,
+          1,
+          6,
+          2,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 2.1089406781749633,
+        "final_score": 2.1089406781749633,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 24,
+      "source_file": "graphPair_256.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          4,
+          5,
+          2,
+          0
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          1,
+          4,
+          5,
+          0,
+          2
+        ],
+        "initial_score": 2.4939397437814548,
+        "final_score": 2.5831076827364847,
+        "iterations": 1,
+        "candidates_evaluated": 66,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 25,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_760.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          0,
+          4,
+          6,
+          5,
+          8,
+          7,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          1,
+          0,
+          4,
+          6,
+          5,
+          8,
+          2,
+          7
+        ],
+        "initial_score": 0.6097120723945796,
+        "final_score": 0.7452478278090358,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 9,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 26,
+      "source_file": "graphPair_761.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 7,
+      "multirelation_cost": 7,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          5,
+          6,
+          2,
+          7,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          1,
+          5,
+          6,
+          2,
+          7,
+          8
+        ],
+        "initial_score": 3.316601086254562,
+        "final_score": 3.316601086254562,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 27,
+      "source_file": "graphPair_18.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          3,
+          7,
+          6,
+          4,
+          0,
+          8,
+          1
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          3,
+          7,
+          6,
+          0,
+          4,
+          8,
+          1
+        ],
+        "initial_score": 0.14592897583329995,
+        "final_score": 0.17492853824054164,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 28,
+      "source_file": "graphPair_56.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          2,
+          5,
+          0,
+          3,
+          7,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          5,
+          7,
+          2,
+          3,
+          8,
+          4
+        ],
+        "initial_score": 0.45493472846461724,
+        "final_score": 1.3478903686868748,
+        "iterations": 4,
+        "candidates_evaluated": 175,
+        "equal_cost_candidates": 18,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 29,
+      "source_file": "graphPair_342.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          6
+        ],
+        "initial_score": 0.0,
+        "final_score": 1.0,
+        "iterations": 1,
+        "candidates_evaluated": 60,
+        "equal_cost_candidates": 9,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          4,
+          1,
+          0,
+          7
+        ],
+        "initial_score": 2.779586972100924,
+        "final_score": 3.6315144383137223,
+        "iterations": 2,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 15,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 30,
+      "source_file": "graphPair_812.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          3,
+          8,
+          4
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          0,
+          3,
+          8,
+          4
+        ],
+        "initial_score": 2.5786063059484867,
+        "final_score": 2.5786063059484867,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 31,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_41.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 2,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          8,
+          3,
+          2,
+          1,
+          5,
+          6,
+          7,
+          4,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          3,
+          8,
+          1,
+          5,
+          6,
+          7,
+          4,
+          0
+        ],
+        "initial_score": 1.4692519350837907,
+        "final_score": 1.6175036665958629,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 32,
+      "source_file": "graphPair_532.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          8,
+          3,
+          1,
+          4,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          5,
+          8,
+          3,
+          1,
+          4,
+          2
+        ],
+        "initial_score": 1.6976855538336226,
+        "final_score": 1.7451370952553695,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 33,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_179.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          6,
+          7,
+          0,
+          5,
+          1,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          2,
+          7,
+          0,
+          5,
+          1,
+          3,
+          4,
+          8
+        ],
+        "initial_score": 0.1623782734468432,
+        "final_score": 0.3541896806088735,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 34,
+      "source_file": "graphPair_166.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          3,
+          2,
+          4,
+          0,
+          5,
+          7,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          3,
+          2,
+          4,
+          0,
+          8,
+          7,
+          5
+        ],
+        "initial_score": 1.7272974523267965,
+        "final_score": 1.9021805584184885,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 35,
+      "source_file": "graphPair_679.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          5,
+          1,
+          0,
+          6
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          5,
+          1,
+          0,
+          6
+        ],
+        "initial_score": 0.4568759800887874,
+        "final_score": 0.4568759800887874,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 36,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_447.json",
+      "simple_cost": 7,
+      "multirelation_cost": 7,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          7,
+          3,
+          5,
+          2,
+          8,
+          1,
+          0,
+          4,
+          6
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          3,
+          5,
+          2,
+          8,
+          1,
+          0,
+          4,
+          6
+        ],
+        "initial_score": 4.187037745696709,
+        "final_score": 4.187037745696709,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 37,
+      "source_file": "graphPair_496.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          3,
+          2,
+          5,
+          4,
+          7,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          2,
+          3,
+          0,
+          5,
+          4,
+          7,
+          8
+        ],
+        "initial_score": 1.3508499403388616,
+        "final_score": 1.4288784198900473,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 38,
+      "source_file": "graphPair_783.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          1,
+          2,
+          4,
+          5,
+          0,
+          6
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          1,
+          0,
+          4,
+          5,
+          2,
+          6
+        ],
+        "initial_score": 0.21341325902510905,
+        "final_score": 0.30638162003470737,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 39,
+      "source_file": "graphPair_814.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          5,
+          1,
+          0,
+          7,
+          4,
+          6
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          5,
+          1,
+          0,
+          7,
+          4,
+          6
+        ],
+        "initial_score": 3.6501031937196933,
+        "final_score": 3.6501031937196933,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 40,
+      "source_file": "graphPair_116.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          7,
+          6,
+          8,
+          3,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          7,
+          6,
+          8,
+          3,
+          4
+        ],
+        "initial_score": 1.4248253008288652,
+        "final_score": 1.4248253008288652,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 41,
+      "source_file": "graphPair_14.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          8,
+          6,
+          5,
+          3,
+          4,
+          1,
+          2
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          8,
+          7,
+          5,
+          3,
+          4,
+          1,
+          2
+        ],
+        "initial_score": 0.28337319256512405,
+        "final_score": 0.5017461924448015,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 42,
+      "source_file": "graphPair_389.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          1,
+          3,
+          6,
+          5,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          1,
+          3,
+          0,
+          5,
+          4
+        ],
+        "initial_score": 1.6126089212703794,
+        "final_score": 1.7274871978607662,
+        "iterations": 2,
+        "candidates_evaluated": 99,
+        "equal_cost_candidates": 21,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 43,
+      "source_file": "graphPair_187.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          3,
+          6,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 30,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          5,
+          6,
+          3,
+          8
+        ],
+        "initial_score": 2.036500537819165,
+        "final_score": 2.193767974876862,
+        "iterations": 1,
+        "candidates_evaluated": 60,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 44,
+      "source_file": "graphPair_387.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          3,
+          7,
+          1,
+          8,
+          2,
+          0,
+          5,
+          4
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 36,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          8,
+          1,
+          7,
+          0,
+          2,
+          5,
+          4
+        ],
+        "initial_score": 3.397810687922468,
+        "final_score": 3.7516859174833885,
+        "iterations": 2,
+        "candidates_evaluated": 108,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 45,
+      "source_file": "graphPair_346.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          1,
+          3,
+          5,
+          6,
+          4,
+          2
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          8,
+          3,
+          5,
+          6,
+          1,
+          7
+        ],
+        "initial_score": 1.0566338792480827,
+        "final_score": 2.105035246081781,
+        "iterations": 3,
+        "candidates_evaluated": 132,
+        "equal_cost_candidates": 15,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 46,
+      "source_file": "graphPair_663.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          5,
+          3,
+          8,
+          1,
+          4,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          5,
+          3,
+          8,
+          0,
+          4,
+          1
+        ],
+        "initial_score": 0.715489887644814,
+        "final_score": 1.0000717827369425,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 47,
+      "source_file": "graphPair_805.json",
+      "target_file": "graphPair_655.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          6,
+          2,
+          3,
+          0,
+          7,
+          1,
+          8,
+          5,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          2,
+          6,
+          0,
+          8,
+          1,
+          4,
+          5,
+          9
+        ],
+        "initial_score": 0.45019630068996275,
+        "final_score": 0.6706452903390901,
+        "iterations": 3,
+        "candidates_evaluated": 180,
+        "equal_cost_candidates": 13,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 48,
+      "source_file": "graphPair_823.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          5,
+          7,
+          8,
+          1,
+          2
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          5,
+          7,
+          8,
+          1,
+          2
+        ],
+        "initial_score": 1.16767596832589,
+        "final_score": 1.16767596832589,
+        "iterations": 0,
+        "candidates_evaluated": 33,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 49,
+      "source_file": "graphPair_367.json",
+      "target_file": "graphPair_805.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          5,
+          1,
+          0,
+          4,
+          2,
+          3,
+          6,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 1.0,
+        "iterations": 1,
+        "candidates_evaluated": 72,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          1,
+          2,
+          4,
+          0,
+          3,
+          7,
+          6
+        ],
+        "initial_score": 2.1675216269071256,
+        "final_score": 3.383459134189549,
+        "iterations": 3,
+        "candidates_evaluated": 144,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 50,
+      "source_file": "graphPair_956.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          2,
+          4,
+          0,
+          7,
+          6,
+          8,
+          1,
+          3
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          5,
+          2,
+          6,
+          0,
+          7,
+          4,
+          8,
+          1,
+          3
+        ],
+        "initial_score": 0.6793807594823107,
+        "final_score": 0.7681101511161237,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 10,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 51,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_354.json",
+      "simple_cost": 7,
+      "multirelation_cost": 7,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          4,
+          6,
+          3,
+          9,
+          0,
+          7,
+          5,
+          1,
+          2,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          6,
+          7,
+          9,
+          3,
+          5,
+          0,
+          1,
+          2,
+          8
+        ],
+        "initial_score": 4.021393268175459,
+        "final_score": 5.000592228178629,
+        "iterations": 3,
+        "candidates_evaluated": 180,
+        "equal_cost_candidates": 20,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 52,
+      "source_file": "graphPair_921.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          0,
+          6,
+          1,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          0,
+          5,
+          1,
+          9
+        ],
+        "initial_score": -0.590537490761255,
+        "final_score": -0.10500980858578703,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 53,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_760.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          4,
+          5,
+          1,
+          6,
+          0,
+          3,
+          7,
+          2,
+          9,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          5,
+          1,
+          6,
+          7,
+          3,
+          0,
+          2,
+          9,
+          8
+        ],
+        "initial_score": 0.9580901338054445,
+        "final_score": 1.0061202012596198,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 54,
+      "source_file": "graphPair_149.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          5,
+          0,
+          4,
+          1,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          0,
+          6,
+          1,
+          7
+        ],
+        "initial_score": 2.027665423884346,
+        "final_score": 2.3003905902437927,
+        "iterations": 2,
+        "candidates_evaluated": 117,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 55,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_822.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          6,
+          2,
+          1,
+          8,
+          4,
+          3,
+          9,
+          5,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          6,
+          2,
+          1,
+          4,
+          5,
+          3,
+          9,
+          8,
+          7
+        ],
+        "initial_score": 0.5880941019483189,
+        "final_score": 0.9959755488625597,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 15,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 56,
+      "source_file": "graphPair_940.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          1,
+          2,
+          3,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          1,
+          2,
+          3,
+          9
+        ],
+        "initial_score": 1.8961400361478573,
+        "final_score": 1.8961400361478573,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 0,
+        "initial_equal_cost_neighbors": 0,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 57,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_89.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          3,
+          1,
+          6,
+          7,
+          9,
+          5,
+          8,
+          2,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          3,
+          1,
+          6,
+          5,
+          8,
+          7,
+          9,
+          2,
+          4
+        ],
+        "initial_score": 1.150833761062735,
+        "final_score": 1.21807152718644,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 15,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 58,
+      "source_file": "graphPair_527.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          1,
+          2,
+          5,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          1,
+          2,
+          4,
+          9
+        ],
+        "initial_score": 0.7988896952021357,
+        "final_score": 1.29691864040612,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 59,
+      "source_file": "graphPair_694.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          5,
+          3,
+          6,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          4,
+          3,
+          6,
+          7
+        ],
+        "initial_score": 2.6290417282960457,
+        "final_score": 3.0095037842085883,
+        "iterations": 1,
+        "candidates_evaluated": 78,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 60,
+      "source_file": "graphPair_679.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 15,
+      "multirelation_cost": 15,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          6,
+          2,
+          7,
+          4,
+          0
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          2,
+          7,
+          4,
+          5
+        ],
+        "initial_score": 0.8527872784523469,
+        "final_score": 0.9563077652699764,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 61,
+      "source_file": "graphPair_943.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 15,
+      "multirelation_cost": 15,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          1,
+          2,
+          8,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          1,
+          2,
+          6,
+          9
+        ],
+        "initial_score": 0.4516321350409157,
+        "final_score": 0.534404952761446,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 62,
+      "source_file": "graphPair_436.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          6,
+          0,
+          5,
+          4,
+          1
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          0,
+          6,
+          5,
+          3
+        ],
+        "initial_score": 0.4913898613274312,
+        "final_score": 1.039787028741423,
+        "iterations": 3,
+        "candidates_evaluated": 156,
+        "equal_cost_candidates": 28,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 5
+      }
+    },
+    {
+      "pair_index": 63,
+      "source_file": "graphPair_886.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          4,
+          0,
+          5,
+          3,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          0,
+          8,
+          3,
+          7
+        ],
+        "initial_score": 0.5647353727805817,
+        "final_score": 0.604957517711018,
+        "iterations": 1,
+        "candidates_evaluated": 78,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 64,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_105.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          4,
+          3,
+          1,
+          8,
+          7,
+          6,
+          0,
+          9,
+          2,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          3,
+          1,
+          8,
+          7,
+          6,
+          0,
+          9,
+          2,
+          5
+        ],
+        "initial_score": 0.554569364374829,
+        "final_score": 0.554569364374829,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 65,
+      "source_file": "graphPair_614.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          4,
+          7,
+          0,
+          2,
+          1,
+          6,
+          3
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          7,
+          6,
+          2,
+          3,
+          9,
+          1
+        ],
+        "initial_score": 3.7944855701443547,
+        "final_score": 4.077096442639349,
+        "iterations": 3,
+        "candidates_evaluated": 168,
+        "equal_cost_candidates": 29,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 66,
+      "source_file": "graphPair_408.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          3,
+          7,
+          6,
+          2,
+          1,
+          8,
+          0,
+          4,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 10,
+        "initial_equal_cost_neighbors": 10,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          7,
+          6,
+          2,
+          1,
+          0,
+          3,
+          5,
+          8
+        ],
+        "initial_score": 1.3111939907306314,
+        "final_score": 2.169227762665831,
+        "iterations": 6,
+        "candidates_evaluated": 315,
+        "equal_cost_candidates": 80,
+        "initial_equal_cost_neighbors": 10,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 67,
+      "source_file": "graphPair_134.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          6,
+          1,
+          7,
+          9,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          6,
+          1,
+          7,
+          9,
+          4
+        ],
+        "initial_score": 1.1888239170445427,
+        "final_score": 1.1888239170445427,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 68,
+      "source_file": "graphPair_342.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          6,
+          7,
+          2,
+          5,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          7,
+          2,
+          0,
+          6
+        ],
+        "initial_score": 2.2916162783041325,
+        "final_score": 2.654493926395634,
+        "iterations": 2,
+        "candidates_evaluated": 105,
+        "equal_cost_candidates": 9,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 69,
+      "source_file": "graphPair_823.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          4,
+          7,
+          1,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 1,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          6,
+          7,
+          1,
+          9
+        ],
+        "initial_score": 1.5505978121658588,
+        "final_score": 1.6073404117098922,
+        "iterations": 1,
+        "candidates_evaluated": 78,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 1,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 70,
+      "source_file": "graphPair_166.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          4,
+          5,
+          7,
+          8,
+          0,
+          1,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 44,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          0,
+          7,
+          6,
+          3,
+          9,
+          1
+        ],
+        "initial_score": 1.0712951231994432,
+        "final_score": 2.161974734554916,
+        "iterations": 4,
+        "candidates_evaluated": 220,
+        "equal_cost_candidates": 28,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 71,
+      "source_file": "graphPair_571.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          0,
+          4,
+          6,
+          1,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          0,
+          5,
+          4,
+          1,
+          7
+        ],
+        "initial_score": 0.003036516096571143,
+        "final_score": 0.41771764042611303,
+        "iterations": 2,
+        "candidates_evaluated": 117,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 72,
+      "source_file": "graphPair_532.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          7,
+          4,
+          6,
+          2,
+          0,
+          5,
+          1
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 3,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          7,
+          4,
+          6,
+          2,
+          0,
+          5,
+          3
+        ],
+        "initial_score": 0.16517667475676104,
+        "final_score": 0.4223775182495898,
+        "iterations": 1,
+        "candidates_evaluated": 84,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 3,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 73,
+      "source_file": "graphPair_768.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          8,
+          3,
+          5,
+          1,
+          6,
+          9,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          5,
+          3,
+          8,
+          1,
+          6,
+          9,
+          7
+        ],
+        "initial_score": 1.3841312224475946,
+        "final_score": 1.4488595706118133,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 74,
+      "source_file": "graphPair_38.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          6,
+          7,
+          2,
+          8,
+          0,
+          3,
+          4
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          7,
+          2,
+          8,
+          0,
+          3,
+          4
+        ],
+        "initial_score": 3.4528810892434856,
+        "final_score": 3.4528810892434856,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 75,
+      "source_file": "graphPair_88.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          2,
+          0,
+          4,
+          1,
+          5,
+          9,
+          7,
+          6
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 44,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          0,
+          4,
+          1,
+          8,
+          9,
+          7,
+          6
+        ],
+        "initial_score": 2.1380096592309803,
+        "final_score": 2.233693369338142,
+        "iterations": 1,
+        "candidates_evaluated": 88,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 76,
+      "source_file": "graphPair_561.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          7,
+          1,
+          6,
+          2,
+          9,
+          4,
+          8,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          7,
+          1,
+          4,
+          2,
+          9,
+          6,
+          5,
+          8
+        ],
+        "initial_score": 1.9870064432598742,
+        "final_score": 2.1050929371694664,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 77,
+      "source_file": "graphPair_560.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          6,
+          7,
+          4,
+          5,
+          1,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          7,
+          6,
+          5,
+          3,
+          8
+        ],
+        "initial_score": 0.8180304065575603,
+        "final_score": 0.9276567295724291,
+        "iterations": 2,
+        "candidates_evaluated": 126,
+        "equal_cost_candidates": 21,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 78,
+      "source_file": "graphPair_602.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          6,
+          2,
+          4,
+          7,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          4,
+          7,
+          6
+        ],
+        "initial_score": 2.2426309043756216,
+        "final_score": 2.786844889233459,
+        "iterations": 2,
+        "candidates_evaluated": 105,
+        "equal_cost_candidates": 18,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 79,
+      "source_file": "graphPair_284.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          5,
+          0,
+          3,
+          6,
+          1
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          5,
+          0,
+          3,
+          4,
+          1
+        ],
+        "initial_score": 1.770461661196837,
+        "final_score": 1.7980811848077058,
+        "iterations": 1,
+        "candidates_evaluated": 78,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 80,
+      "source_file": "graphPair_792.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          2,
+          3,
+          6,
+          4,
+          9,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 44,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          0,
+          2,
+          3,
+          5,
+          8,
+          9,
+          6
+        ],
+        "initial_score": 0.48318573902200246,
+        "final_score": 1.2280745836897522,
+        "iterations": 2,
+        "candidates_evaluated": 132,
+        "equal_cost_candidates": 18,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 5
+      }
+    },
+    {
+      "pair_index": 81,
+      "source_file": "graphPair_931.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          4,
+          7,
+          6,
+          2,
+          0,
+          1,
+          3
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          7,
+          6,
+          2,
+          0,
+          1,
+          3
+        ],
+        "initial_score": 0.9880773006549999,
+        "final_score": 0.9880773006549999,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 82,
+      "source_file": "graphPair_624.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          1,
+          4,
+          7,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          1,
+          6,
+          7,
+          4
+        ],
+        "initial_score": 1.9374228608283108,
+        "final_score": 2.6801951306851812,
+        "iterations": 2,
+        "candidates_evaluated": 117,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 83,
+      "source_file": "graphPair_517.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 15,
+      "multirelation_cost": 15,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          4,
+          0,
+          1,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          4,
+          0,
+          3,
+          6
+        ],
+        "initial_score": 0.74975642396354,
+        "final_score": 1.39778606974996,
+        "iterations": 2,
+        "candidates_evaluated": 105,
+        "equal_cost_candidates": 18,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 4
+      }
+    },
+    {
+      "pair_index": 84,
+      "source_file": "graphPair_102.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          1,
+          6,
+          3,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 7,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          1,
+          9,
+          3,
+          6
+        ],
+        "initial_score": 2.117241709058077,
+        "final_score": 2.155701943574087,
+        "iterations": 1,
+        "candidates_evaluated": 70,
+        "equal_cost_candidates": 14,
+        "initial_equal_cost_neighbors": 7,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 85,
+      "source_file": "graphPair_652.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          4,
+          2,
+          0,
+          1,
+          8,
+          3,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          2,
+          0,
+          3,
+          6,
+          1,
+          7
+        ],
+        "initial_score": 1.36101462167876,
+        "final_score": 1.6149482229375371,
+        "iterations": 2,
+        "candidates_evaluated": 126,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 86,
+      "source_file": "graphPair_390.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          2,
+          4,
+          7,
+          5,
+          0,
+          3,
+          8
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          8,
+          3,
+          6,
+          0,
+          1,
+          5
+        ],
+        "initial_score": 1.1629396778154366,
+        "final_score": 1.7293990917067308,
+        "iterations": 5,
+        "candidates_evaluated": 252,
+        "equal_cost_candidates": 47,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 87,
+      "source_file": "graphPair_41.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          5,
+          4,
+          1,
+          8,
+          9,
+          3,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          4,
+          6,
+          1,
+          8,
+          9,
+          3,
+          7
+        ],
+        "initial_score": 1.8250443066960804,
+        "final_score": 2.3947722713519757,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 18,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 88,
+      "source_file": "graphPair_493.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 13,
+      "multirelation_cost": 13,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          2,
+          5,
+          4,
+          7
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 39,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          3,
+          0,
+          2,
+          6,
+          4,
+          7
+        ],
+        "initial_score": 0.6210141508754118,
+        "final_score": 1.257504342840298,
+        "iterations": 2,
+        "candidates_evaluated": 117,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 89,
+      "source_file": "graphPair_221.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          0,
+          7,
+          3,
+          2,
+          6,
+          1,
+          4,
+          5,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          7,
+          3,
+          2,
+          4,
+          1,
+          6,
+          8,
+          5
+        ],
+        "initial_score": 1.4273058854913065,
+        "final_score": 1.8222317544975493,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 90,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_938.json",
+      "simple_cost": 5,
+      "multirelation_cost": 5,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          0,
+          4,
+          1,
+          2,
+          8,
+          6,
+          5,
+          7,
+          3,
+          9
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 5,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          4,
+          1,
+          2,
+          8,
+          5,
+          6,
+          7,
+          3,
+          9
+        ],
+        "initial_score": 4.719804649468173,
+        "final_score": 4.729371464638195,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 10,
+        "initial_equal_cost_neighbors": 5,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 91,
+      "source_file": "graphPair_252.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          5,
+          2,
+          0,
+          1,
+          3,
+          4,
+          7,
+          6,
+          9
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          8,
+          1,
+          3,
+          4,
+          7,
+          6,
+          9
+        ],
+        "initial_score": 3.3471339479403714,
+        "final_score": 3.601959631571622,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 92,
+      "source_file": "graphPair_197.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 10,
+      "multirelation_cost": 10,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          0,
+          9,
+          3,
+          4,
+          2,
+          7,
+          6,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          0,
+          9,
+          3,
+          4,
+          2,
+          7,
+          6,
+          8
+        ],
+        "initial_score": 1.864899072111145,
+        "final_score": 1.8679141303908047,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 93,
+      "source_file": "graphPair_989.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          2,
+          8,
+          6,
+          7,
+          4,
+          0,
+          3,
+          5
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 44,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          2,
+          8,
+          4,
+          7,
+          6,
+          3,
+          0,
+          5
+        ],
+        "initial_score": 2.698190633606524,
+        "final_score": 2.8509584213074515,
+        "iterations": 2,
+        "candidates_evaluated": 132,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 94,
+      "source_file": "graphPair_108.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 0,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          8,
+          2,
+          4,
+          7,
+          5
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 6,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          2,
+          4,
+          7,
+          0
+        ],
+        "initial_score": 1.2746474902401583,
+        "final_score": 2.3736877241241183,
+        "iterations": 3,
+        "candidates_evaluated": 140,
+        "equal_cost_candidates": 24,
+        "initial_equal_cost_neighbors": 6,
+        "initial_improving_neighbors": 5
+      }
+    },
+    {
+      "pair_index": 95,
+      "source_file": "graphPair_838.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 12,
+      "multirelation_cost": 12,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          0,
+          2,
+          6,
+          3,
+          8,
+          9,
+          7,
+          4,
+          1
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          0,
+          2,
+          6,
+          3,
+          8,
+          9,
+          7,
+          4,
+          1
+        ],
+        "initial_score": 0.7364370047457686,
+        "final_score": 0.7364370047457686,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      }
+    },
+    {
+      "pair_index": 96,
+      "source_file": "graphPair_32.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 11,
+      "multirelation_cost": 11,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          6,
+          7,
+          4,
+          2,
+          0,
+          3,
+          1
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 42,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          7,
+          4,
+          2,
+          0,
+          1,
+          3
+        ],
+        "initial_score": 2.3977205394100056,
+        "final_score": 2.56914363285539,
+        "iterations": 1,
+        "candidates_evaluated": 84,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    },
+    {
+      "pair_index": 97,
+      "source_file": "graphPair_268.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 9,
+      "multirelation_cost": 9,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          4,
+          2,
+          6,
+          1,
+          9,
+          5,
+          0,
+          7,
+          3
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          4,
+          2,
+          8,
+          1,
+          9,
+          6,
+          0,
+          7,
+          3
+        ],
+        "initial_score": 3.7621473032611843,
+        "final_score": 3.9599998747193865,
+        "iterations": 2,
+        "candidates_evaluated": 135,
+        "equal_cost_candidates": 12,
+        "initial_equal_cost_neighbors": 4,
+        "initial_improving_neighbors": 2
+      }
+    },
+    {
+      "pair_index": 98,
+      "source_file": "graphPair_621.json",
+      "target_file": "graphPair_1.json",
+      "simple_cost": 14,
+      "multirelation_cost": 14,
+      "shared_entities": 1,
+      "initial_aligned": 1,
+      "id_oracle_aligned": 1,
+      "embedding_aligned": 1,
+      "id_oracle": {
+        "mapping": [
+          4,
+          2,
+          7,
+          6,
+          8
+        ],
+        "initial_score": 1.0,
+        "final_score": 1.0,
+        "iterations": 0,
+        "candidates_evaluated": 35,
+        "equal_cost_candidates": 8,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          6,
+          2,
+          7,
+          4,
+          5
+        ],
+        "initial_score": 1.8577341449269709,
+        "final_score": 2.112919585458043,
+        "iterations": 2,
+        "candidates_evaluated": 105,
+        "equal_cost_candidates": 24,
+        "initial_equal_cost_neighbors": 8,
+        "initial_improving_neighbors": 3
+      }
+    },
+    {
+      "pair_index": 99,
+      "source_file": "graphPair_1.json",
+      "target_file": "graphPair_337.json",
+      "simple_cost": 8,
+      "multirelation_cost": 8,
+      "shared_entities": 1,
+      "initial_aligned": 0,
+      "id_oracle_aligned": 0,
+      "embedding_aligned": 0,
+      "id_oracle": {
+        "mapping": [
+          1,
+          5,
+          0,
+          8,
+          7,
+          9,
+          4,
+          2,
+          3,
+          6
+        ],
+        "initial_score": 0.0,
+        "final_score": 0.0,
+        "iterations": 0,
+        "candidates_evaluated": 45,
+        "equal_cost_candidates": 2,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 0
+      },
+      "embedding": {
+        "mapping": [
+          1,
+          5,
+          0,
+          8,
+          7,
+          3,
+          4,
+          2,
+          9,
+          6
+        ],
+        "initial_score": 1.8280508384202978,
+        "final_score": 2.0982724007674673,
+        "iterations": 1,
+        "candidates_evaluated": 90,
+        "equal_cost_candidates": 4,
+        "initial_equal_cost_neighbors": 2,
+        "initial_improving_neighbors": 1
+      }
+    }
+  ]
+}

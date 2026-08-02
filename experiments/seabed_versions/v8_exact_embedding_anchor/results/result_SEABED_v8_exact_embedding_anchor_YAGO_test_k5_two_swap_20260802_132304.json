@@ -1,0 +1,237 @@
+{
+  "version": "v8_exact_embedding_anchor",
+  "path_revision": "dual_executable_path_v1",
+  "frozen_inference_source": "dataset-appropriate V0/V4 checkpoint + v1 structural repair + dual_cost_exact_embedding_anchor_v1",
+  "config": {
+    "abs_path": "../",
+    "anchor_max_iterations": 20,
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v4_corrected_training/checkpoints/YAGO_200_GEDRankerSEABED_v4_corrected_training_col3_unit_BPR_20260801_193451.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "YAGO",
+    "dataset_root": "/data/projects/SEABED-main/data/YAGO",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_saved_paths": 100,
+    "max_test_pairs": 100,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v8_exact_embedding_anchor",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v8_exact_embedding_anchor/results",
+    "save_pair_details": 0,
+    "save_paths": 1,
+    "tau": 1.0,
+    "test_k": 5,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v4_corrected_training/checkpoints/YAGO_200_GEDRankerSEABED_v4_corrected_training_col3_unit_BPR_20260801_193451.pt",
+  "num_pairs": 100,
+  "semantics": {
+    "simple_graph": "undirected endpoint, one predicate, raw edge-list last-write-wins",
+    "multirelation": "undirected endpoint, complete predicate multiset",
+    "node_substitution_cost": 0,
+    "node_insertion_deletion_cost": 1,
+    "edge_insertion_deletion_cost": 1,
+    "relation_substitution_cost": 1
+  },
+  "v1_dense_reference": {
+    "initial": {
+      "mse": 0.02,
+      "mae": 0.02,
+      "acc": 0.98,
+      "fea": 1.0
+    },
+    "final": {
+      "mse": 0.0,
+      "mae": 0.0,
+      "acc": 1.0,
+      "fea": 1.0
+    },
+    "ranking": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "pk1": 1.0,
+      "pk5": 1.0,
+      "pk10": 1.0,
+      "pk15": 1.0,
+      "pk20": 1.0
+    },
+    "improved_pair_rate": 0.02,
+    "average_cost_reduction": 0.02,
+    "scope": "pre-anchor structural mapping; executable paths use the dual-cost-equivalent exact-anchor mapping"
+  },
+  "simple_graph_path": {
+    "cost": {
+      "mse": 0.0,
+      "mae": 0.0,
+      "acc": 1.0,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 1.0,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.0,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 0.0,
+      "mean_normalized_gap": 0.0
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.52,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.74,
+      "edge_deletions": 0.0,
+      "relation_substitutions": 0.0
+    },
+    "ranking": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "pk1": 1.0,
+      "pk5": 1.0,
+      "pk10": 1.0,
+      "pk15": 1.0,
+      "pk20": 1.0
+    },
+    "relation_preservation_rate": 1.0
+  },
+  "multirelation_path": {
+    "cost": {
+      "mse": 0.0,
+      "mae": 0.0,
+      "acc": 1.0,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 1.0,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.0,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 0.0,
+      "mean_normalized_gap": 0.0
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.52,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.74,
+      "edge_deletions": 0.0,
+      "relation_substitutions": 0.0
+    },
+    "ranking": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "pk1": 1.0,
+      "pk5": 1.0,
+      "pk10": 1.0,
+      "pk15": 1.0,
+      "pk20": 1.0
+    },
+    "relation_preservation_rate": 1.0
+  },
+  "evaluator_disagreement": {
+    "simple_vs_v1_dense_rate": 0.0,
+    "multirelation_vs_v1_dense_rate": 0.0,
+    "simple_vs_multirelation_rate": 0.0,
+    "mean_simple_minus_v1_dense": 0.0,
+    "mean_multirelation_minus_v1_dense": 0.0,
+    "mean_multirelation_minus_simple": 0.0
+  },
+  "semantic_proxy": {
+    "shared_entities": 2050,
+    "aligned_shared_entities": 2050,
+    "shared_entity_alignment_rate": 1.0,
+    "pairs_without_shared_entities_are_excluded": true
+  },
+  "repair": {
+    "average_iterations": 0.02,
+    "average_candidates_evaluated": 6.51
+  },
+  "timing": {
+    "inference_seconds_per_pair": 0.19236,
+    "path_audit_seconds_per_pair": 0.00029
+  },
+  "saved_paths": 100,
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v8_exact_embedding_anchor/results/paths_SEABED_v8_exact_embedding_anchor_YAGO_test_k5_two_swap_20260802_132304.jsonl",
+  "feature_topology_reindex": {
+    "revision": "kg_edge_topology_reindex_v1",
+    "graphs": 31000,
+    "graphs_changed": 30000,
+    "reassigned_nodes": 677833,
+    "consistent_edges_before": 28607,
+    "consistent_edges_after": 841353,
+    "edges": 841353,
+    "edge_consistency_before": 0.034001,
+    "edge_consistency_after": 1.0,
+    "fully_consistent_graphs_before": 1000,
+    "fully_consistent_graphs_after": 31000
+  },
+  "exact_embedding_anchor": {
+    "revision": "dual_cost_exact_embedding_anchor_v1",
+    "objective": "number of mapped node pairs with exactly equal embeddings",
+    "candidate_moves": "matched 2-swap and unmatched-target replacement",
+    "protected_costs": [
+      "simple_graph",
+      "multirelation"
+    ],
+    "simple_cost_changed_pairs": 0,
+    "multirelation_cost_changed_pairs": 0,
+    "simple_cost_unchanged_rate": 1.0,
+    "multirelation_cost_unchanged_rate": 1.0,
+    "shared_entities": 2050,
+    "aligned_before": 1976,
+    "aligned_after": 2050,
+    "alignment_rate_before": 0.963902,
+    "alignment_rate_after": 1.0,
+    "exact_anchors_before": 1976,
+    "exact_anchors_after": 2050,
+    "pairs_mapping_changed": 41,
+    "pairs_anchor_improved": 41,
+    "pairs_alignment_improved": 41,
+    "pairs_alignment_harmed": 0,
+    "pairs_with_equal_cost_neighbor": 98,
+    "pairs_with_anchor_improving_neighbor": 41,
+    "average_iterations": 0.55,
+    "average_candidates_evaluated": 457.32,
+    "average_equal_cost_candidates": 8.0,
+    "seconds_per_pair": 0.092244,
+    "entity_ids_used_for_selection": false,
+    "entity_ids_used_for_diagnostic_only": true
+  }
+}

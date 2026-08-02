@@ -1,0 +1,53 @@
+"""Arguments for the isolated V3 topology-feature reindex audit."""
+
+import argparse
+
+
+def parameter_parser():
+    parser = argparse.ArgumentParser(
+        description="Evaluate frozen V1 inference after topology-feature reindexing."
+    )
+    parser.add_argument("--dataset", required=True)
+    parser.add_argument("--dataset-root", required=True)
+    parser.add_argument("--checkpoint-path", required=True)
+    parser.add_argument("--use-raw-features", type=int, choices=[1], default=1)
+    parser.add_argument("--ged-column", type=int, choices=[3], default=3)
+    parser.add_argument("--cost-mode", choices=["unit"], default="unit")
+    parser.add_argument("--topk-approach", choices=["parallel"], default="parallel")
+    parser.add_argument("--unsupervised-approach", choices=["BPR"], default="BPR")
+    parser.add_argument("--test-k", type=int, default=100)
+    parser.add_argument("--testset", choices=["test", "val", "train"], default="test")
+    parser.add_argument("--max-train-pairs", type=int, default=0)
+    parser.add_argument("--max-val-pairs", type=int, default=0)
+    parser.add_argument("--max-test-pairs", type=int, default=0)
+    parser.add_argument("--diffusion-steps", type=int, default=1000)
+    parser.add_argument("--inference-diffusion_steps", type=int, default=10)
+    parser.add_argument("--tau", type=float, default=1.0)
+    parser.add_argument("--gumbel-iteration", type=int, default=5)
+    parser.add_argument("--hidden-dim", type=list, default=[128, 64, 32, 32, 32, 32])
+    parser.add_argument("--d_hidden-dim", type=list, default=[128, 64, 32])
+    parser.add_argument("--batch-size", type=int, default=128)
+    parser.add_argument("--learning-rate", type=float, default=0.001)
+    parser.add_argument("--weight-decay", type=float, default=5 * 10 ** -4)
+    parser.add_argument(
+        "--result-path",
+        default="experiments/seabed_versions/v3_topology_feature_reindex/results",
+    )
+    parser.add_argument("--model-path", default="model_save/")
+    parser.add_argument("--model-name", default="GEDRankerSEABED_v3_topology_feature_reindex")
+    parser.add_argument("--model-train", type=int, choices=[0], default=0)
+    parser.add_argument("--model-epoch-start", type=int, default=200)
+    parser.add_argument("--model-epoch-end", type=int, default=200)
+    parser.add_argument("--abs-path", default="../")
+    parser.add_argument("--repair-mode", choices=["none", "two_swap"], default="two_swap")
+    parser.add_argument("--repair-max-iterations", type=int, default=20)
+    parser.add_argument("--repair-candidate-batch-size", type=int, default=2048)
+    parser.add_argument("--save-pair-details", type=int, choices=[0], default=0)
+    parser.add_argument("--save-paths", type=int, choices=[0, 1], default=1)
+    parser.add_argument(
+        "--max-saved-paths",
+        type=int,
+        default=100,
+        help="Maximum JSONL path records; 0 saves every audited pair.",
+    )
+    return parser.parse_args()

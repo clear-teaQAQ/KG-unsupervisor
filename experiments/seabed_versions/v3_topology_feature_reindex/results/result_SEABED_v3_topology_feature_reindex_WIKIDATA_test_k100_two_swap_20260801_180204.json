@@ -1,0 +1,203 @@
+{
+  "version": "v3_topology_feature_reindex",
+  "path_revision": "dual_executable_path_v1",
+  "frozen_inference_source": "v1_certified_repair/deterministic_dense_v4",
+  "config": {
+    "abs_path": "../",
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/model_save/WIKIDATA_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_062631.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "WIKIDATA",
+    "dataset_root": "/data/projects/SEABED-main/data/WIKIDATA",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_saved_paths": 100,
+    "max_test_pairs": 0,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v3_topology_feature_reindex",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v3_topology_feature_reindex/results",
+    "save_pair_details": 0,
+    "save_paths": 1,
+    "tau": 1.0,
+    "test_k": 100,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/model_save/WIKIDATA_200_GEDRankerSEABED_main_col3_unit_BPR_20260727_062631.pt",
+  "num_pairs": 10000,
+  "semantics": {
+    "simple_graph": "undirected endpoint, one predicate, raw edge-list last-write-wins",
+    "multirelation": "undirected endpoint, complete predicate multiset",
+    "node_substitution_cost": 0,
+    "node_insertion_deletion_cost": 1,
+    "edge_insertion_deletion_cost": 1,
+    "relation_substitution_cost": 1
+  },
+  "v1_dense_reference": {
+    "initial": {
+      "mse": 2.349,
+      "mae": 0.44,
+      "acc": 0.833,
+      "fea": 0.96
+    },
+    "final": {
+      "mse": 0.797,
+      "mae": 0.181,
+      "acc": 0.91,
+      "fea": 0.952
+    },
+    "ranking": {
+      "rho": 0.986,
+      "tau": 0.968,
+      "pk1": 0.91,
+      "pk5": 0.97,
+      "pk10": 0.976,
+      "pk15": 0.982,
+      "pk20": 0.983
+    },
+    "improved_pair_rate": 0.098,
+    "average_cost_reduction": 0.2753
+  },
+  "simple_graph_path": {
+    "cost": {
+      "mse": 0.778,
+      "mae": 0.162,
+      "acc": 0.928,
+      "fea": 0.971
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.9284,
+      "negative_excess_rate": 0.029,
+      "mean_excess_cost": 0.0993,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 20.0,
+      "mean_normalized_gap": 0.0081
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.763,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.6562,
+      "edge_deletions": 0.0185,
+      "relation_substitutions": 0.1443
+    },
+    "ranking": {
+      "rho": 0.986,
+      "tau": 0.971,
+      "pk1": 0.935,
+      "pk5": 0.977,
+      "pk10": 0.982,
+      "pk15": 0.987,
+      "pk20": 0.985
+    },
+    "relation_preservation_rate": 0.9942
+  },
+  "multirelation_path": {
+    "cost": {
+      "mse": 0.765,
+      "mae": 0.137,
+      "acc": 0.954,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.9539,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.1371,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 20.0,
+      "mean_normalized_gap": 0.0117
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.763,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.7384,
+      "edge_deletions": 0.0187,
+      "relation_substitutions": 0.0997
+    },
+    "ranking": {
+      "rho": 0.988,
+      "tau": 0.975,
+      "pk1": 0.985,
+      "pk5": 0.993,
+      "pk10": 0.991,
+      "pk15": 0.992,
+      "pk20": 0.99
+    },
+    "relation_preservation_rate": 0.9958
+  },
+  "evaluator_disagreement": {
+    "simple_vs_v1_dense_rate": 0.021,
+    "multirelation_vs_v1_dense_rate": 0.0545,
+    "simple_vs_multirelation_rate": 0.0348,
+    "mean_simple_minus_v1_dense": 0.0211,
+    "mean_multirelation_minus_v1_dense": 0.0589,
+    "mean_multirelation_minus_simple": 0.0378
+  },
+  "semantic_proxy": {
+    "shared_entities": 254550,
+    "aligned_shared_entities": 230296,
+    "shared_entity_alignment_rate": 0.9047,
+    "pairs_without_shared_entities_are_excluded": true
+  },
+  "repair": {
+    "average_iterations": 0.159,
+    "average_candidates_evaluated": 103.24
+  },
+  "timing": {
+    "inference_seconds_per_pair": 0.22375,
+    "path_audit_seconds_per_pair": 0.00042
+  },
+  "saved_paths": 100,
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v3_topology_feature_reindex/results/paths_SEABED_v3_topology_feature_reindex_WIKIDATA_test_k100_two_swap_20260801_180204.jsonl",
+  "feature_topology_reindex": {
+    "revision": "kg_edge_topology_reindex_v1",
+    "graphs": 51000,
+    "graphs_changed": 50000,
+    "reassigned_nodes": 1392387,
+    "consistent_edges_before": 37615,
+    "consistent_edges_after": 1695173,
+    "edges": 1695173,
+    "edge_consistency_before": 0.022189,
+    "edge_consistency_after": 1.0,
+    "fully_consistent_graphs_before": 1000,
+    "fully_consistent_graphs_after": 51000
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "version": "v7_embedding_evidence_audit",
+  "scope": "offline audit of V6 saved smoke paths; no checkpoint or inference",
+  "dataset": "YAGO",
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v6_semantic_tie_break/results/paths_SEABED_v6_semantic_tie_break_YAGO_test_k5_two_swap_20260802_124924.jsonl",
+  "coverage": {
+    "pairs": 100,
+    "unique_source_graphs": 4,
+    "unique_target_graphs": 100
+  },
+  "entity_overlap": {
+    "shared_entity_observations": 2050,
+    "unique_shared_entity_ids": 79,
+    "nonshared_source_observations": 0
+  },
+  "identity_evidence": {
+    "exact_shared_vectors": {
+      "count": 2050,
+      "total": 2050,
+      "rate": 1.0
+    },
+    "unique_ids_exact_in_every_observation": {
+      "count": 79,
+      "total": 79,
+      "rate": 1.0
+    },
+    "correct_entity_is_cosine_top1": {
+      "count": 2050,
+      "total": 2050,
+      "rate": 1.0
+    },
+    "correct_entity_is_unique_top1": {
+      "count": 2050,
+      "total": 2050,
+      "rate": 1.0
+    },
+    "correct_entity_beats_every_incorrect": {
+      "count": 2050,
+      "total": 2050,
+      "rate": 1.0
+    },
+    "correct_entity_is_reciprocal_top1": {
+      "count": 2050,
+      "total": 2050,
+      "rate": 1.0
+    },
+    "mean_reciprocal_rank": 1.0,
+    "incorrect_exact_vector_collisions": 0
+  },
+  "cosine_distributions": {
+    "correct_entity": {
+      "count": 2050,
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p95": 1.0,
+      "max": 1.0
+    },
+    "best_incorrect_entity": {
+      "count": 2050,
+      "min": 0.227587,
+      "p05": 0.455656,
+      "median": 0.827942,
+      "mean": 0.798824,
+      "p95": 0.978363,
+      "max": 0.994921
+    },
+    "correct_minus_best_incorrect_margin": {
+      "count": 2050,
+      "min": 0.005079,
+      "p05": 0.021637,
+      "median": 0.172058,
+      "mean": 0.201176,
+      "p95": 0.544344,
+      "max": 0.772413
+    },
+    "nonshared_source_best_target": {
+      "count": 0,
+      "min": null,
+      "p05": null,
+      "median": null,
+      "mean": null,
+      "p95": null,
+      "max": null
+    },
+    "correct_entity_rank": {
+      "count": 2050,
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p95": 1.0,
+      "max": 1.0
+    }
+  },
+  "interpretation": {
+    "entity_ids_used_by_v6_selection": false,
+    "entity_ids_used_by_this_audit": true,
+    "low_overlap_warning": false,
+    "smoke_prefix_is_not_representative": true
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "version": "v7_embedding_evidence_audit",
+  "scope": "offline audit of V6 saved smoke paths; no checkpoint or inference",
+  "dataset": "LUBM",
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v6_semantic_tie_break/results/paths_SEABED_v6_semantic_tie_break_LUBM_test_k5_two_swap_20260802_125848.jsonl",
+  "coverage": {
+    "pairs": 100,
+    "unique_source_graphs": 69,
+    "unique_target_graphs": 23
+  },
+  "entity_overlap": {
+    "shared_entity_observations": 43,
+    "unique_shared_entity_ids": 3,
+    "nonshared_source_observations": 689
+  },
+  "identity_evidence": {
+    "exact_shared_vectors": {
+      "count": 43,
+      "total": 43,
+      "rate": 1.0
+    },
+    "unique_ids_exact_in_every_observation": {
+      "count": 3,
+      "total": 3,
+      "rate": 1.0
+    },
+    "correct_entity_is_cosine_top1": {
+      "count": 43,
+      "total": 43,
+      "rate": 1.0
+    },
+    "correct_entity_is_unique_top1": {
+      "count": 43,
+      "total": 43,
+      "rate": 1.0
+    },
+    "correct_entity_beats_every_incorrect": {
+      "count": 43,
+      "total": 43,
+      "rate": 1.0
+    },
+    "correct_entity_is_reciprocal_top1": {
+      "count": 43,
+      "total": 43,
+      "rate": 1.0
+    },
+    "mean_reciprocal_rank": 1.0,
+    "incorrect_exact_vector_collisions": 0
+  },
+  "cosine_distributions": {
+    "correct_entity": {
+      "count": 43,
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p95": 1.0,
+      "max": 1.0
+    },
+    "best_incorrect_entity": {
+      "count": 43,
+      "min": 0.099085,
+      "p05": 0.099085,
+      "median": 0.479711,
+      "mean": 0.318139,
+      "p95": 0.479711,
+      "max": 0.483975
+    },
+    "correct_minus_best_incorrect_margin": {
+      "count": 43,
+      "min": 0.516025,
+      "p05": 0.520289,
+      "median": 0.520289,
+      "mean": 0.681861,
+      "p95": 0.900915,
+      "max": 0.900915
+    },
+    "nonshared_source_best_target": {
+      "count": 689,
+      "min": 0.005737,
+      "p05": 0.118323,
+      "median": 0.370224,
+      "mean": 0.411195,
+      "p95": 0.7428,
+      "max": 0.852404
+    },
+    "correct_entity_rank": {
+      "count": 43,
+      "min": 1.0,
+      "p05": 1.0,
+      "median": 1.0,
+      "mean": 1.0,
+      "p95": 1.0,
+      "max": 1.0
+    }
+  },
+  "interpretation": {
+    "entity_ids_used_by_v6_selection": false,
+    "entity_ids_used_by_this_audit": true,
+    "low_overlap_warning": true,
+    "smoke_prefix_is_not_representative": true
+  }
+}

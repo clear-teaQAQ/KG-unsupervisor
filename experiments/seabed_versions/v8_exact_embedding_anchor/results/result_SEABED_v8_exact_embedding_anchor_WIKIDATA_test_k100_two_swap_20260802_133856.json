@@ -1,0 +1,237 @@
+{
+  "version": "v8_exact_embedding_anchor",
+  "path_revision": "dual_executable_path_v1",
+  "frozen_inference_source": "dataset-appropriate V0/V4 checkpoint + v1 structural repair + dual_cost_exact_embedding_anchor_v1",
+  "config": {
+    "abs_path": "../",
+    "anchor_max_iterations": 20,
+    "batch_size": 128,
+    "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v4_corrected_training/checkpoints/WIKIDATA_200_GEDRankerSEABED_v4_corrected_training_col3_unit_BPR_20260801_231901.pt",
+    "cost_mode": "unit",
+    "d_hidden_dim": [
+      128,
+      64,
+      32
+    ],
+    "dataset": "WIKIDATA",
+    "dataset_root": "/data/projects/SEABED-main/data/WIKIDATA",
+    "diffusion_steps": 1000,
+    "ged_column": 3,
+    "gumbel_iteration": 5,
+    "hidden_dim": [
+      128,
+      64,
+      32,
+      32,
+      32,
+      32
+    ],
+    "inference_diffusion_steps": 10,
+    "learning_rate": 0.001,
+    "max_saved_paths": 100,
+    "max_test_pairs": 0,
+    "max_train_pairs": 0,
+    "max_val_pairs": 0,
+    "model_epoch_end": 200,
+    "model_epoch_start": 200,
+    "model_name": "GEDRankerSEABED_v8_exact_embedding_anchor",
+    "model_path": "model_save/",
+    "model_train": 0,
+    "repair_candidate_batch_size": 2048,
+    "repair_max_iterations": 20,
+    "repair_mode": "two_swap",
+    "result_path": "experiments/seabed_versions/v8_exact_embedding_anchor/results",
+    "save_pair_details": 0,
+    "save_paths": 1,
+    "tau": 1.0,
+    "test_k": 100,
+    "testset": "test",
+    "topk_approach": "parallel",
+    "unsupervised_approach": "BPR",
+    "use_raw_features": 1,
+    "weight_decay": 0.0005
+  },
+  "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v4_corrected_training/checkpoints/WIKIDATA_200_GEDRankerSEABED_v4_corrected_training_col3_unit_BPR_20260801_231901.pt",
+  "num_pairs": 10000,
+  "semantics": {
+    "simple_graph": "undirected endpoint, one predicate, raw edge-list last-write-wins",
+    "multirelation": "undirected endpoint, complete predicate multiset",
+    "node_substitution_cost": 0,
+    "node_insertion_deletion_cost": 1,
+    "edge_insertion_deletion_cost": 1,
+    "relation_substitution_cost": 1
+  },
+  "v1_dense_reference": {
+    "initial": {
+      "mse": 0.067,
+      "mae": 0.056,
+      "acc": 0.948,
+      "fea": 0.949
+    },
+    "final": {
+      "mse": 0.064,
+      "mae": 0.056,
+      "acc": 0.948,
+      "fea": 0.948
+    },
+    "ranking": {
+      "rho": 0.997,
+      "tau": 0.991,
+      "pk1": 0.92,
+      "pk5": 0.976,
+      "pk10": 0.983,
+      "pk15": 0.989,
+      "pk20": 0.992
+    },
+    "improved_pair_rate": 0.0003,
+    "average_cost_reduction": 0.0009,
+    "scope": "pre-anchor structural mapping; executable paths use the dual-cost-equivalent exact-anchor mapping"
+  },
+  "simple_graph_path": {
+    "cost": {
+      "mse": 0.037,
+      "mae": 0.033,
+      "acc": 0.969,
+      "fea": 0.969
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.969,
+      "negative_excess_rate": 0.0309,
+      "mean_excess_cost": -0.0327,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 2.0,
+      "mean_normalized_gap": -0.0031
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.763,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.6378,
+      "edge_deletions": 0.0001,
+      "relation_substitutions": 0.0491
+    },
+    "ranking": {
+      "rho": 0.998,
+      "tau": 0.994,
+      "pk1": 0.945,
+      "pk5": 0.985,
+      "pk10": 0.989,
+      "pk15": 0.995,
+      "pk20": 0.994
+    },
+    "relation_preservation_rate": 0.9982
+  },
+  "multirelation_path": {
+    "cost": {
+      "mse": 0.001,
+      "mae": 0.0,
+      "acc": 1.0,
+      "fea": 1.0
+    },
+    "validity": {
+      "mapping_validity_rate": 1.0,
+      "cost_consistency_rate": 1.0,
+      "replay_success_rate": 1.0
+    },
+    "optimality": {
+      "optimal_path_rate": 0.9997,
+      "negative_excess_rate": 0.0,
+      "mean_excess_cost": 0.0004,
+      "median_excess_cost": 0.0,
+      "p95_excess_cost": 0.0,
+      "max_excess_cost": 2.0,
+      "mean_normalized_gap": 0.0
+    },
+    "average_operation_cost": {
+      "node_insertions": 4.763,
+      "node_deletions": 0.0,
+      "edge_insertions": 5.7198,
+      "edge_deletions": 0.0001,
+      "relation_substitutions": 0.0002
+    },
+    "ranking": {
+      "rho": 1.0,
+      "tau": 1.0,
+      "pk1": 1.0,
+      "pk5": 1.0,
+      "pk10": 1.0,
+      "pk15": 1.0,
+      "pk20": 1.0
+    },
+    "relation_preservation_rate": 1.0
+  },
+  "evaluator_disagreement": {
+    "simple_vs_v1_dense_rate": 0.0218,
+    "multirelation_vs_v1_dense_rate": 0.0518,
+    "simple_vs_multirelation_rate": 0.0311,
+    "mean_simple_minus_v1_dense": 0.0225,
+    "mean_multirelation_minus_v1_dense": 0.0556,
+    "mean_multirelation_minus_simple": 0.0331
+  },
+  "semantic_proxy": {
+    "shared_entities": 254550,
+    "aligned_shared_entities": 254540,
+    "shared_entity_alignment_rate": 1.0,
+    "pairs_without_shared_entities_are_excluded": true
+  },
+  "repair": {
+    "average_iterations": 0.0004,
+    "average_candidates_evaluated": 12.95
+  },
+  "timing": {
+    "inference_seconds_per_pair": 0.41029,
+    "path_audit_seconds_per_pair": 0.00036
+  },
+  "saved_paths": 100,
+  "path_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v8_exact_embedding_anchor/results/paths_SEABED_v8_exact_embedding_anchor_WIKIDATA_test_k100_two_swap_20260802_133856.jsonl",
+  "feature_topology_reindex": {
+    "revision": "kg_edge_topology_reindex_v1",
+    "graphs": 51000,
+    "graphs_changed": 50000,
+    "reassigned_nodes": 1392387,
+    "consistent_edges_before": 37615,
+    "consistent_edges_after": 1695173,
+    "edges": 1695173,
+    "edge_consistency_before": 0.022189,
+    "edge_consistency_after": 1.0,
+    "fully_consistent_graphs_before": 1000,
+    "fully_consistent_graphs_after": 51000
+  },
+  "exact_embedding_anchor": {
+    "revision": "dual_cost_exact_embedding_anchor_v1",
+    "objective": "number of mapped node pairs with exactly equal embeddings",
+    "candidate_moves": "matched 2-swap and unmatched-target replacement",
+    "protected_costs": [
+      "simple_graph",
+      "multirelation"
+    ],
+    "simple_cost_changed_pairs": 0,
+    "multirelation_cost_changed_pairs": 0,
+    "simple_cost_unchanged_rate": 1.0,
+    "multirelation_cost_unchanged_rate": 1.0,
+    "shared_entities": 254550,
+    "aligned_before": 250161,
+    "aligned_after": 254540,
+    "alignment_rate_before": 0.982758,
+    "alignment_rate_after": 0.999961,
+    "exact_anchors_before": 250161,
+    "exact_anchors_after": 254540,
+    "pairs_mapping_changed": 2220,
+    "pairs_anchor_improved": 2220,
+    "pairs_alignment_improved": 2220,
+    "pairs_alignment_harmed": 0,
+    "pairs_with_equal_cost_neighbor": 9053,
+    "pairs_with_anchor_improving_neighbor": 2220,
+    "average_iterations": 0.3526,
+    "average_candidates_evaluated": 589.25,
+    "average_equal_cost_candidates": 33.81,
+    "seconds_per_pair": 0.147965,
+    "entity_ids_used_for_selection": false,
+    "entity_ids_used_for_diagnostic_only": true
+  }
+}

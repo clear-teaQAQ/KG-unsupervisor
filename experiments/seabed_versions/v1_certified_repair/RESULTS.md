@@ -1,18 +1,46 @@
 # V1 Results
 
-Status: LUBM full evaluation complete; SWDF/YAGO/WIKIDATA full evaluations are pending.
+Status: full four-dataset evaluation complete.
 
 ## Full result
 
-| Dataset | Pairs | k | Initial MAE | Final MAE | Initial ACC | Final ACC | Improved pairs | Initial evaluator-bound hit | Final evaluator-bound hit | Time/pair |
+| Dataset | Pairs | k | Initial MAE | Final MAE | Relative MAE reduction | Initial ACC | Final ACC | ACC gain | Improved pairs | Time/pair |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| LUBM | 10000 | 100 | 0.110 | 0.102 | 0.901 | 0.908 | 0.0075 | 0.0151 | 0.0152 | 0.17083 s |
+| LUBM | 10000 | 100 | 0.110 | 0.102 | 7.27% | 0.901 | 0.908 | +0.7 pp | 0.75% | 0.17083 s |
+| SWDF | 10000 | 100 | 0.274 | 0.258 | 5.84% | 0.764 | 0.773 | +0.9 pp | 1.81% | 0.28649 s |
+| YAGO | 6000 | 100 | 0.843 | 0.473 | 43.89% | 0.778 | 0.873 | +9.5 pp | 13.07% | 0.16299 s |
+| WIKIDATA | 10000 | 100 | 0.918 | 0.367 | 60.02% | 0.709 | 0.863 | +15.4 pp | 20.05% | 0.30335 s |
 
-LUBM result file:
+The `initial` and `final` columns use the same frozen V0 checkpoint, sampled
+candidates, and deterministic evaluator. Their difference therefore isolates
+the effect of exact local repair. Historical V0 numbers are not used for this
+attribution because the old CUDA evaluator was nondeterministic on duplicate
+dense cells.
+
+Final result files:
 
 ```text
 results/result_SEABED_v1_certified_repair_LUBM_test_k100_two_swap_20260731_203827.json
+results/result_SEABED_v1_certified_repair_SWDF_test_k100_two_swap_20260731_235658.json
+results/result_SEABED_v1_certified_repair_YAGO_test_k100_two_swap_20260731_223743.json
+results/result_SEABED_v1_certified_repair_WIKIDATA_test_k100_two_swap_20260731_235708.json
 ```
+
+## Repair diagnostics
+
+| Dataset | Average cost reduction | Maximum reduction | Initial evaluator-bound hit | Final evaluator-bound hit | Final below raw size bound |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| LUBM | 0.0080 | 2 | 1.51% | 1.52% | 0.00% |
+| SWDF | 0.0212 | 3 | 0.51% | 0.51% | 2.32% |
+| YAGO | 0.3700 | 16 | 77.87% | 87.32% | 0.03% |
+| WIKIDATA | 0.5774 | 26 | 71.61% | 88.00% | 4.51% |
+
+| Dataset | FEA initial | FEA final | rho | tau | P@10 | P@20 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| LUBM | 1.000 | 1.000 | 0.971 | 0.952 | 0.963 | 0.968 |
+| SWDF | 0.976 | 0.973 | 0.928 | 0.889 | 0.898 | 0.945 |
+| YAGO | 1.000 | 1.000 | 0.956 | 0.922 | 0.955 | 0.960 |
+| WIKIDATA | 0.967 | 0.955 | 0.970 | 0.939 | 0.957 | 0.962 |
 
 ## Cost incident
 
@@ -68,7 +96,21 @@ Graphs with conflicting relation labels for the same undirected endpoint pair:
 
 The completed LUBM result remains valid because all LUBM effective adjacency
 matrices are symmetric, making the old and exact formulas equivalent for every
-mapping. SWDF must restart; YAGO and WIKIDATA must use `deterministic_dense_v4`.
+mapping. SWDF, YAGO, and WIKIDATA final runs use `deterministic_dense_v4`.
+LUBM completed before the revision field was added to result metadata, but its
+zero-conflict audit makes its result unaffected by that revision.
+
+The SEABED label-generation script uses an undirected simple `networkx.Graph`.
+Repeated relations on the same endpoint pair are overwritten there as well, but
+its overwrite order is not necessarily identical to V0/V1. GEDRanker's loader
+appends all reverse edges after all original edges, while its evaluator observes
+one upper-triangle orientation. For endpoint pairs containing conflicting raw
+orientations, this can select a different predicate from `networkx.Graph`.
+Therefore `deterministic_dense_v4` is an exact deterministic reproduction of the
+V0 evaluator, not yet a proven exact reproduction of the benchmark generator.
+It is also not a full multi-relation KG evaluator. In particular, WIKIDATA's
+4.51% final-below-raw-size-bound rate must not be interpreted as finding a better
+edit path for the original multi-edge KG.
 
 ## Preliminary smoke result
 
@@ -131,15 +173,21 @@ results/result_SEABED_v1_certified_repair_WIKIDATA_test_k5_two_swap_20260731_201
 | `test_k` | 100 |
 | `repair_max_iterations` | 20 |
 
-## Metrics
-
-| Dataset | Initial MAE | Final MAE | Initial ACC | Final ACC | Improved pairs | Initial bound hit | Final bound hit | Time/pair |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| LUBM | 0.110 | 0.102 | 0.901 | 0.908 | 0.0075 | 0.0151 | 0.0152 | 0.17083 s |
-| SWDF | pending | pending | pending | pending | pending | pending | pending | pending |
-| YAGO | pending | pending | pending | pending | pending | pending | pending | pending |
-| WIKIDATA | pending | pending | pending | pending | pending | pending | pending | pending |
-
 ## Conclusion
 
-Pending.
+V1 is retained as an inference component. Exact local repair gives substantial
+gains on YAGO and WIKIDATA, but only small gains on LUBM and SWDF. The result
+supports repair after candidate generation; it does not yet support using the
+same cost as a new training signal.
+
+Before repair-guided retraining, the next version must settle evaluator scope:
+
+1. Compare the V0 dense graph, the SEABED `networkx.Graph`, and column-3 labels
+   on a sampled set, including duplicate-endpoint and reciprocal-edge cases.
+2. Export the corresponding explicit node/edge edit decomposition and verify
+   that replay reaches the benchmark's effective graph.
+3. Keep a true multi-relation KG evaluator as a separately named semantic task;
+   do not compare its costs directly with simple-graph column-3 labels.
+
+Only after those checks should a later version integrate repair into training
+and retrain for 200 epochs.
