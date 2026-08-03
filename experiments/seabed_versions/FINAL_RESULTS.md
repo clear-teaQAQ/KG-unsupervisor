@@ -1,4 +1,4 @@
-# GEDRanker-SEABED Shortcut-Aware Results
+# GEDRanker-SEABED Shortcut-Aware Consolidated Results
 
 > **Critical benchmark caveat:** a parameter-free size formula exactly predicts
 > 100% of YAGO and WIKIDATA GED labels. Their near-perfect model/path scores do
@@ -7,9 +7,19 @@
 
 ## Scope
 
-The final tested framework is V8. It combines corrected topology-feature
-alignment, frozen GEDRanker inference, exact structural two-swap repair, dual
-executable edit paths, and dual-cost-preserving exact embedding anchors.
+The results have two distinct surfaces that must not be collapsed:
+
+```text
+V8: frozen inference, exact structural repair, executable edit paths, and
+    GED-equivalent identity refinement
+
+V10: training-time KG-aware pseudo-label selection, evaluated on raw generator
+     mappings without V1/V8 repair
+```
+
+V8 remains the executable-path/explanation framework. V10 is the latest trained
+correspondence method and tests whether KG identity evidence changes what the
+generator itself learns.
 
 Checkpoint policy:
 
@@ -20,6 +30,29 @@ YAGO/WIKIDATA: V4 200-epoch checkpoints trained on corrected feature order
 
 All formal evaluations use SEABED GED column 3, unit costs, `test_k=100`, and
 all test pairs.
+
+## Learned Raw Correspondence
+
+V10 retains GED as the primary pseudo-label objective and uses exact embedding
+identity only to select among equal-GED training mappings. Test-time selection
+remains unchanged minimum-GED best-of-100 inference with no postprocessing.
+
+| Dataset | Baseline raw anchors | V10 raw anchors | Baseline recall | V10 recall | Delta | GED MAE baseline -> V10 | GED ACC baseline -> V10 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- | --- |
+| LUBM | 1,418 / 2,119 | 1,565 / 2,119 | 66.92% | 73.86% | +6.94 pp | 0.110 -> 0.109 | 0.901 -> 0.900 |
+| SWDF | 584 / 884 | 640 / 884 | 66.06% | 72.40% | +6.33 pp | 0.341 -> 0.359 | 0.701 -> 0.686 |
+| YAGO | 116,903 / 119,370 | 119,352 / 119,370 | 97.93% | 99.98% | +2.05 pp | 0.006 -> 0.004 | 0.995 -> 0.997 |
+| WIKIDATA | 250,144 / 254,550 | 254,493 / 254,550 | 98.27% | 99.98% | +1.71 pp | 0.130 -> 0.132 | 0.892 -> 0.892 |
+
+The raw correspondence gain reproduces on all four datasets and adds 7,001
+aligned exact-identity observations. SWDF is a real limitation: correspondence
+improves while GED MAE rises by 0.018 and ACC falls by 0.015. V10 is therefore
+evidence that KG-aware pseudo-labels teach correspondence, but not yet the final
+multi-objective training design.
+
+YAGO/WIKIDATA correspondence is nearly saturated because derived graphs retain
+identical embeddings for shared entities. Their GED deltas remain unsuitable as
+matching evidence because of the size shortcut.
 
 ## Nontrivial GED Results
 
@@ -98,3 +131,15 @@ supported by SEABED column 3.
 Do not use YAGO/WIKIDATA accuracy as evidence for learned GED matching. Their
 role is limited to implementation scalability, executable-path invariants, and
 identity-correspondence analysis under explicit construction leakage.
+
+V10 adds a separate defensible training result:
+
+```text
+GED-primary, KG-aware pseudo-label self-training improves raw identity
+correspondence on all four datasets without test-time semantic selection
+```
+
+Do not claim that its per-update lexicographic rule guarantees unchanged final
+GED. SWDF shows that equal-GED pseudo-label choices alter later rollout and
+optimization trajectories. The next training version must retain a separate
+GED-only structural archive or equivalent preservation objective.
