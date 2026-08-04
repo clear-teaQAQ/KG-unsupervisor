@@ -24,7 +24,7 @@ for DATASET in ${DATASETS}; do
   if [[ -n "${CHECKPOINT_PATH:-}" ]]; then
     CHECKPOINT="${CHECKPOINT_PATH}"
   else
-    CHECKPOINT="$(latest_match "experiments/seabed_versions/v11_relation_aware_ged_training/checkpoints/${DATASET}_${EPOCHS}_GEDRankerSEABED_v11_relation_${RELATION_MODE}_col3_unit_BPR_*.pt")"
+    CHECKPOINT="$(latest_match "experiments/seabed_versions/v11_relation_aware_ged_training/checkpoints/${DATASET}_${EPOCHS}_GEDRankerSEABED_v11_relation_${RELATION_MODE}_col3_unit_BPR_*.pt" || true)"
   fi
   if [[ ! -f "${CHECKPOINT}" ]]; then
     echo "V11 checkpoint not found for ${DATASET}: ${CHECKPOINT}" >&2

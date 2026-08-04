@@ -1,7 +1,7 @@
 # V11 Results
 
-Status: implementation and LUBM/SWDF functional smoke complete; formal
-200-epoch training pending.
+Status: four-dataset raw-relation 200-epoch training complete; independent
+fixed-seed checkpoint evaluation pending.
 
 ## Static and unit checks
 
@@ -39,6 +39,37 @@ training_results/manifest_SWDF_raw_epoch1_20260803_170433.json
 
 ## Formal results
 
-Pending. Do not copy V1 repaired GED, V10 correspondence, or smoke values into
-the V11 formal table. V11 primary results must be independently evaluated raw
-checkpoints trained for 200 epochs with `RELATION_MODE=raw`.
+### Checkpoints
+
+| Dataset | Checkpoint |
+| --- | --- |
+| LUBM | `LUBM_200_GEDRankerSEABED_v11_relation_raw_col3_unit_BPR_20260803_180220.pt` |
+| SWDF | `SWDF_200_GEDRankerSEABED_v11_relation_raw_col3_unit_BPR_20260803_210556.pt` |
+| YAGO | `YAGO_200_GEDRankerSEABED_v11_relation_raw_col3_unit_BPR_20260803_225008.pt` |
+| WIKIDATA | `WIKIDATA_200_GEDRankerSEABED_v11_relation_raw_col3_unit_BPR_20260804_025643.pt` |
+
+### Training-process preview
+
+These tests ran at the end of each training process after training had consumed
+the random-number stream. They verify the full configuration and show the
+likely trend, but they are not the authoritative fixed-seed comparison.
+
+| Dataset | MSE | MAE | ACC | Exact-anchor recall |
+| --- | ---: | ---: | ---: | ---: |
+| LUBM | 0.107 | 0.094 | 0.913 | 59.65% |
+| SWDF | 0.309 | 0.266 | 0.754 | 69.80% |
+| YAGO | 0.005 | 0.004 | 0.996 | 98.18% |
+| WIKIDATA | 0.249 | 0.164 | 0.873 | 98.41% |
+
+Relative to the independent raw baseline, the preview improves both primary
+GED datasets: LUBM MAE changes from 0.110 to 0.094 and SWDF from 0.341 to
+0.266. WIKIDATA degrades from 0.130 to 0.164, so relation-aware message passing
+is not yet accepted as a uniformly beneficial method.
+
+### Independent fixed-seed results
+
+Pending. The `raw_eval_results` directory contained no result files after
+training. Do not copy V1 repaired GED, V10 correspondence, smoke values, or the
+training-process preview into the authoritative V11 table. V11 primary results
+must independently reload the raw 200-epoch checkpoints under seed 0 with
+`test_k=100`, column-3 unit cost, and no postprocessing.
