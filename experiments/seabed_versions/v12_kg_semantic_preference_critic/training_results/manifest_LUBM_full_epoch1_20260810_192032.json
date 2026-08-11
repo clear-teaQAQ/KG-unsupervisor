@@ -1,0 +1,26 @@
+{
+  "version": "v12_kg_semantic_preference_critic",
+  "relation_revision": "semantic_preference_bootstrap_v1",
+  "control": {
+    "control_mode": "full",
+    "relation_mode": "raw",
+    "enable_semantic_critic": true,
+    "use_teacher_consistency": true,
+    "adaptive_explore": true,
+    "sparse_matching": true,
+    "semantic_weight": 0.15,
+    "keep_loss_weight": 0.1,
+    "explore_weight": 0.05,
+    "sparse_top_r": 32,
+    "sparse_random_epsilon": 0.05,
+    "semantic_hidden_dim": [
+      64,
+      32
+    ],
+    "feature_dim": 8
+  },
+  "dataset": "LUBM",
+  "epochs": 1,
+  "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v12_kg_semantic_preference_critic/checkpoints/LUBM_1_GEDRankerSEABED_v12_semantic_full_raw_BPR_20260810_192032.pt",
+  "result": null
+}

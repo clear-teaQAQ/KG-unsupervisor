@@ -28,16 +28,14 @@ result record. A completed version is not edited when the next version starts.
 | [V8](v8_exact_embedding_anchor/README.md) | Recover exact embedding identity anchors inside the dual-cost tie space | No | Complete; retained |
 | [V9](v9_benchmark_shortcut_audit/README.md) | Test whether GED labels require matching beyond graph-size differences | No | Complete; YAGO/WIKIDATA shortcut confirmed |
 | [V10](v10_kg_tie_aware_training/README.md) | Train the generator on GED-primary, exact-anchor tie-resolved pseudo-labels | Yes, pseudo-label selection | Complete; correspondence improves on all four, SWDF GED tradeoff |
-| [V11](v11_relation_aware_ged_training/README.md) | Encode relation embeddings used by column-3 GED in generator and discriminator message passing | Yes, model input/encoder | Smoke verified on LUBM/SWDF; formal training pending |
+| [V11](v11_relation_aware_ged_training/README.md) | Encode relation embeddings used by column-3 GED in generator and discriminator message passing | Yes, model input/encoder | Formal raw result complete; relation controls pending |
 
 ## Current decision
 
-V10 is the latest completed training version. V1-V9 remain frozen engineering,
+V11 is the latest raw-GED training result. V1-V9 remain frozen engineering,
 explainability, data-integrity, and benchmark audits; their post-hoc improvements
-are not treated as learned correspondence quality. V10 keeps the column-3 unit
-GED evaluator fixed and changes only which equal-GED pseudo-label the generator
-learns during training. Its primary evaluation uses raw generator mappings with
-no V1/V8 repair.
+are not treated as learned correspondence quality. Both V10 and V11 use raw
+generator mappings with no V1/V8 repair.
 
 V10 raises raw exact-anchor recall from 66.92% to 73.86% on LUBM, 66.06% to
 72.40% on SWDF, 97.93% to 99.98% on YAGO, and 98.27% to 99.98% on WIKIDATA.
@@ -45,10 +43,14 @@ LUBM retains GED quality, while SWDF MAE changes from 0.341 to 0.359 and ACC
 from 0.701 to 0.686. This SWDF tradeoff prevents treating V10 as the final
 method and motivates a separate structural archive in the next training version.
 
-V11 is the active GED-improvement experiment. It restores the baseline GED-only
-pseudo-label rule and isolates relation-aware GINE message passing. This targets
-the labeled-edge mismatch that affects 97.56% of LUBM and 99.49% of SWDF test
-pairs without exposing graph-size deltas to the model.
+V11 restores the baseline GED-only pseudo-label rule and adds relation-aware
+GINE message passing. Under independent seed-0 evaluation, raw MAE/ACC changes
+from `0.110/0.901` to `0.092/0.916` on LUBM and from `0.341/0.701` to
+`0.263/0.756` on SWDF. This targets the labeled-edge mismatch that affects
+97.56% of LUBM and 99.49% of SWDF test pairs without exposing graph-size deltas
+to the model. Constant/shuffled relation controls remain necessary before the
+gain is attributed specifically to relation identity rather than the GINE
+architecture.
 
 The benchmark interpretation remains constrained by V9. The size-only formula
 `abs(delta V) + abs(delta E)` equals
@@ -56,10 +58,11 @@ The benchmark interpretation remains constrained by V9. The size-only formula
 evidence of learned matching. LUBM and SWDF match that formula on only 1.52%
 and 3.17% of test pairs and remain the nontrivial GED evaluations.
 
-YAGO/WIKIDATA use V4 checkpoints trained after topology-feature correction;
-LUBM/SWDF retain V0 checkpoints because the same correction is a verified
-no-op. All four datasets produce executable simple and multirelation paths with
-100% mapping validity, cost consistency, and replay success.
+Historical baseline evaluation uses V4 checkpoints for YAGO/WIKIDATA and V0
+checkpoints for LUBM/SWDF. V11 trains new 200-epoch checkpoints for all four on
+the universal corrected loader. The separate V8 path framework produces
+executable simple and multirelation paths with 100% mapping validity, cost
+consistency, and replay success.
 
 The V8 anchor rule still has a valid narrow result: across 36,000 pairs it
 newly aligns 6,937 shared-entity observations, harms none, and changes no path
