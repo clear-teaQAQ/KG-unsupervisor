@@ -1,0 +1,200 @@
+{
+  "audit_revision": "v15_frozen_same_mapping_simple_path_v1",
+  "checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/checkpoints/SWDF_200_GEDRankerSEABED_v15_projected_input_relation_raw_col3_unit_BPR_20260812_011747.pt",
+  "selection_policy": "unchanged V15 legacy unit-cost best-of-k; executable simple cost is evaluated after selection on the same mapping",
+  "inference_is_new_seeded_sample": true,
+  "seed": 0,
+  "test_k": 100,
+  "cost_and_task_unchanged": {
+    "cost_mode": "unit",
+    "ged_column": 3,
+    "ground_truth_changed": false,
+    "candidate_selection_changed": false,
+    "primary_benchmark_overwritten": false
+  },
+  "legacy_selected": {
+    "pairs": 10000,
+    "mae": 0.2383,
+    "mse": 0.2655,
+    "acc": 0.7749,
+    "fea": 0.9217,
+    "mean_signed_error": 0.0767,
+    "signed_error_buckets": {
+      "+1": 1365,
+      "-1": 758,
+      "0": 7749,
+      "<=-2": 25,
+      ">=+2": 103
+    },
+    "absolute_error_buckets": {
+      "0": 7749,
+      "1": 2123,
+      "2": 124,
+      ">=3": 4
+    }
+  },
+  "simple_path_same_mapping": {
+    "pairs": 10000,
+    "mae": 0.1436,
+    "mse": 0.1642,
+    "acc": 0.8658,
+    "fea": 1.0,
+    "mean_signed_error": 0.1436,
+    "signed_error_buckets": {
+      "+1": 1257,
+      "0": 8658,
+      ">=+2": 85
+    },
+    "absolute_error_buckets": {
+      "0": 8658,
+      "1": 1257,
+      "2": 76,
+      ">=3": 9
+    }
+  },
+  "evaluator_disagreement": {
+    "pairs": 10000,
+    "different_cost_pairs": 1548,
+    "different_cost_rate": 0.1548,
+    "mean_simple_minus_legacy": 0.0669,
+    "simple_minus_legacy_counts": {
+      "-3": 1,
+      "-2": 22,
+      "-1": 428,
+      "0": 8452,
+      "1": 1051,
+      "2": 45,
+      "3": 1
+    }
+  },
+  "operation_cost_means": {
+    "node_insertions": 1.9426,
+    "node_deletions": 0.0,
+    "edge_insertions": 2.7482,
+    "edge_deletions": 0.6645,
+    "relation_substitutions": 4.5141
+  },
+  "mapping_file": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/frozen_mapping_audit_results/mappings_SEABED_SWDF_test_k100_20260812_152111.jsonl",
+  "legacy_result_payload": {
+    "config": {
+      "abs_path": "../",
+      "audit_seed": 0,
+      "batch_size": 128,
+      "cost_mode": "unit",
+      "d_hidden_dim": [
+        128,
+        64,
+        32
+      ],
+      "dataset": "SWDF",
+      "dataset_root": "/data/projects/SEABED-main/data/SWDF",
+      "diffusion_steps": 1000,
+      "ged_column": 3,
+      "gumbel_iteration": 5,
+      "hidden_dim": [
+        128,
+        64,
+        32,
+        32,
+        32,
+        32
+      ],
+      "inference_diffusion_steps": 10,
+      "learning_rate": 0.001,
+      "max_test_pairs": 0,
+      "max_train_pairs": 1,
+      "max_val_pairs": 1,
+      "model_epoch_end": 200,
+      "model_epoch_start": 0,
+      "model_name": "GEDRankerSEABED_v15_frozen_mapping_audit",
+      "model_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/checkpoints",
+      "model_train": 0,
+      "relation_mode": "raw",
+      "result_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/frozen_mapping_audit_results",
+      "tau": 1.0,
+      "test_k": 100,
+      "testset": "test",
+      "topk_approach": "parallel",
+      "unsupervised_approach": "BPR",
+      "use_raw_features": 1,
+      "v15_mode": "projected_input",
+      "weight_decay": 0.0005
+    },
+    "mse": 0.266,
+    "time": 0.17212,
+    "run_time": 0.17438,
+    "mae": 0.238,
+    "acc": 0.775,
+    "fea": 0.922,
+    "rho": 0.934,
+    "tau": 0.898,
+    "pk1": 0.775,
+    "pk5": 0.839,
+    "pk10": 0.909,
+    "pk15": 0.932,
+    "pk20": 0.944,
+    "version": "v15_benchmark_projected_relation_input",
+    "feature_topology_reindex": {
+      "revision": "kg_edge_topology_reindex_v1",
+      "graphs": 1000,
+      "graphs_changed": 0,
+      "reassigned_nodes": 0,
+      "consistent_edges_before": 8124,
+      "consistent_edges_after": 8124,
+      "edges": 8124,
+      "edge_consistency_before": 1.0,
+      "edge_consistency_after": 1.0,
+      "fully_consistent_graphs_before": 1000,
+      "fully_consistent_graphs_after": 1000
+    },
+    "checkpoint_path": "",
+    "relation_revision": "symmetric_gine_raw_relation_v1",
+    "relation_diagnostics": {
+      "revision": "symmetric_gine_raw_relation_v1",
+      "mode": "raw",
+      "graphs": 1000,
+      "edges": 8124,
+      "relation_dim": 100,
+      "unique_relation_ids": 114,
+      "inconsistent_relation_ids": 0,
+      "nested_embeddings_flattened": 8124,
+      "direction_policy": "same relation vector on forward and reverse edges",
+      "self_loop_policy": "zero relation vector"
+    },
+    "loaded_checkpoint_path": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/checkpoints/SWDF_200_GEDRankerSEABED_v15_projected_input_relation_raw_col3_unit_BPR_20260812_011747.pt",
+    "raw_correspondence": {
+      "selection": "first minimum-GED sample from unchanged best-of-k inference",
+      "postprocessing": "none",
+      "test_k": 100,
+      "pairs": 10000,
+      "pairs_with_exact_anchors": 544,
+      "pairs_with_perfect_anchor_recall": 268,
+      "selected_exact_anchors": 598,
+      "available_exact_anchors": 884,
+      "exact_anchor_recall": 0.6764705882352942,
+      "exact_anchor_rate_over_mapped_nodes": 0.009130746797367658
+    },
+    "v15_mode": "projected_input",
+    "projection_revision": "undirected_last_raw_write_gine_input_only_v1",
+    "projection_diagnostics": {
+      "revision": "undirected_last_raw_write_gine_input_only_v1",
+      "mode": "projected_input",
+      "graphs": 1000,
+      "affected_graphs": 678,
+      "raw_edges": 8124,
+      "projected_edges": 6701,
+      "dropped_edges": 1423,
+      "dropped_fraction": 0.17516,
+      "parallel_endpoint_pairs": 1217,
+      "max_multiplicity": 4,
+      "model_edge_view": "undirected_simple_last_write",
+      "unit_ged_edge_view": "unchanged_v11_raw_legacy"
+    },
+    "preserves_cost_mode": "unit",
+    "unit_ged_edge_view": "unchanged_v11_raw_legacy",
+    "primary_metrics": [
+      "mae",
+      "acc"
+    ]
+  }
+}

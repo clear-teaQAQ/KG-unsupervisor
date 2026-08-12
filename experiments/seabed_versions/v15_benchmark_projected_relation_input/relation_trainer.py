@@ -71,8 +71,15 @@ def project_last_write_edges(edge_pairs, edge_ids, relation_features):
 
 
 def _expanded_edge_index(edges, node_count):
+    # An undirected self-loop has only one directed representation. Adding
+    # its reverse would duplicate the same relation edge and make unit-cost
+    # edge counting inconsistent with the projected simple graph.
     expanded = list(edges)
-    expanded += [[target, source] for source, target in edges]
+    expanded += [
+        [target, source]
+        for source, target in edges
+        if source != target
+    ]
     expanded += [[node, node] for node in range(node_count)]
     if not expanded:
         return torch.empty((2, 0), dtype=torch.long)
@@ -148,8 +155,14 @@ class V15ProjectedRelationTrainer(V11RelationAwareTrainer):
             relation = torch.tensor(
                 projected["relation_features"], dtype=torch.float
             ).reshape(-1, self.relation_dim)
+            reverse_relation = relation[
+                torch.tensor(
+                    [source != target for source, target in projected["graph"]],
+                    dtype=torch.bool,
+                )
+            ]
             self_loops = torch.zeros((graph["n"], self.relation_dim), dtype=torch.float)
-            edge_attr = torch.cat([relation, relation, self_loops], dim=0)
+            edge_attr = torch.cat([relation, reverse_relation, self_loops], dim=0)
             if edge_attr.shape[0] != edge_index.shape[1]:
                 raise RuntimeError("Projected relation attributes do not align with edges.")
             self.projected_edge_index.append(edge_index)
@@ -157,7 +170,18 @@ class V15ProjectedRelationTrainer(V11RelationAwareTrainer):
             self.projected_relation_edge_attr.append(edge_attr)
 
     @staticmethod
-    def _pair_edge_labels(edge_ids_1, edge_ids_2, n1, n2):
+    def _expanded_edge_labels(edge_ids, edges, node_count):
+        labels = list(edge_ids)
+        labels += [
+            edge_id
+            for edge_id, (source, target) in zip(edge_ids, edges)
+            if source != target
+        ]
+        labels += [0] * node_count
+        return labels
+
+    @classmethod
+    def _pair_edge_labels(cls, edge_ids_1, edge_ids_2, edges_1, edges_2, n1, n2):
         edge_vocab = {}
         next_label = 1
         for edge_id in edge_ids_1 + edge_ids_2:
@@ -166,8 +190,12 @@ class V15ProjectedRelationTrainer(V11RelationAwareTrainer):
                 next_label += 1
         labels_1 = [edge_vocab[edge_id] for edge_id in edge_ids_1]
         labels_2 = [edge_vocab[edge_id] for edge_id in edge_ids_2]
-        tensor_1 = torch.tensor(labels_1 + labels_1 + [0] * n1, dtype=torch.long)
-        tensor_2 = torch.tensor(labels_2 + labels_2 + [0] * n2, dtype=torch.long)
+        tensor_1 = torch.tensor(
+            cls._expanded_edge_labels(labels_1, edges_1, n1), dtype=torch.long
+        )
+        tensor_2 = torch.tensor(
+            cls._expanded_edge_labels(labels_2, edges_2, n2), dtype=torch.long
+        )
         return torch.cat([tensor_1, tensor_2], dim=0)
 
     def pack_graph_pair(self, pair):
@@ -208,6 +236,8 @@ class V15ProjectedRelationTrainer(V11RelationAwareTrainer):
         data.edge_labels = self._pair_edge_labels(
             self.projected_edge_ids[graph_1],
             self.projected_edge_ids[graph_2],
+            self.projected_graphs[graph_1]["graph"],
+            self.projected_graphs[graph_2]["graph"],
             n1,
             n2,
         )
