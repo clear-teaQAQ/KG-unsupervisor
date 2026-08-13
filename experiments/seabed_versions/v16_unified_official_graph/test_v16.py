@@ -61,14 +61,17 @@ class V16UnifiedCostTest(unittest.TestCase):
         self.assertEqual(dense_cost, path_cost)
         self.assertEqual(dense_cost, 2.0)
 
-    def test_below_ground_truth_is_rejected(self):
+    def test_below_ground_truth_is_recorded_not_rejected(self):
+        trainer = object.__new__(V16UnifiedOfficialGraphTrainer)
+        trainer.below_ground_truth_candidates = 0
+        trainer.below_ground_truth_batches = 0
         batch = Data(ged=torch.tensor([4.0, 5.0]))
-        with self.assertRaises(RuntimeError):
-            V16UnifiedOfficialGraphTrainer._assert_not_below_ground_truth(
-                torch.tensor([4.0, 4.0]), batch, "test"
-            )
+        trainer._record_ground_truth_comparison(
+            torch.tensor([4.0, 4.0]), batch, "test"
+        )
+        self.assertEqual(trainer.below_ground_truth_candidates, 1)
+        self.assertEqual(trainer.below_ground_truth_batches, 1)
 
 
 if __name__ == "__main__":
     unittest.main()
-
