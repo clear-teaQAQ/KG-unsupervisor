@@ -1,0 +1,166 @@
+{
+  "audit": "swdf_v15_cpu_read_only_v1",
+  "non_negotiable_objective": {
+    "cost_mode": "unit",
+    "ged_column": 3,
+    "ground_truth_changed": false,
+    "preference_labels_changed": false,
+    "model_or_checkpoint_loaded": false,
+    "gpu_used": false,
+    "primary_metrics": [
+      "mae",
+      "acc"
+    ]
+  },
+  "sources": {
+    "raw_result": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/training_results/result_SEABED_SWDF_test_BPR_gedcol3_unit_20260811_214247.json",
+    "projected_result": "/data/projects/GEDRanker-main/experiments/seabed_versions/v15_benchmark_projected_relation_input/training_results/result_SEABED_SWDF_test_BPR_gedcol3_unit_20260812_011747.json"
+  },
+  "dataset_audit": {
+    "dataset_root": "/data/projects/SEABED-main/data/SWDF",
+    "split": "test",
+    "ged_column": 3,
+    "pairs": 10000,
+    "pair_split_origins": {
+      "test->test": 10000
+    },
+    "involved_unique_graphs": 200,
+    "involved_graph_summary": {
+      "graphs_with_collapsed_edges": 143,
+      "raw_edges": 1655,
+      "simple_last_write_edges": 1353,
+      "collapsed_edges": 302,
+      "max_multiplicity": 4
+    },
+    "pair_collapse_exposure": {
+      "pairs_with_at_least_one_collapsed_graph": 9231,
+      "rate": 0.9231,
+      "pairs_with_both_graphs_collapsed": 5105,
+      "pair_edge_occurrence_drop_fraction": 0.18257622975123594,
+      "collapsed_edge_count_buckets": {
+        ">=5": 2060,
+        "3-4": 3163,
+        "1-2": 4008,
+        "0": 769
+      },
+      "collapsed_edge_fraction_buckets": {
+        "> 0.25": 1873,
+        "(0.10, 0.25]": 5526,
+        "(0, 0.10]": 1832,
+        "0": 769
+      }
+    },
+    "ground_truth_and_difficulty": {
+      "ged_min": 0.0,
+      "ged_max": 18.0,
+      "ged_mean": 9.7258,
+      "ged_buckets": {
+        "9-12": 5387,
+        ">=13": 1436,
+        "5-8": 2925,
+        "1-4": 202,
+        "0": 50
+      },
+      "node_gap_mean": 1.9426,
+      "node_gap_buckets": {
+        "1-2": 4989,
+        "3-4": 2771,
+        ">=5": 563,
+        "0": 1677
+      },
+      "simple_edge_count_gap_mean": 2.1607
+    },
+    "cost_definition_evidence": {
+      "simple_graph_count_lower_bound_violations": 0,
+      "full_multigraph_lower_bound_certificates": 293,
+      "certificate_meaning": "column-3 GED is below the unavoidable node/raw-edge-count cost of any full-multigraph edit path"
+    }
+  },
+  "v15_metric_comparison": {
+    "mae": {
+      "raw": 0.263,
+      "projected_input": 0.242,
+      "projected_minus_raw": -0.021
+    },
+    "acc": {
+      "raw": 0.757,
+      "projected_input": 0.773,
+      "projected_minus_raw": 0.016
+    },
+    "mse": {
+      "raw": 0.306,
+      "projected_input": 0.273,
+      "projected_minus_raw": -0.033
+    },
+    "fea": {
+      "raw": 0.925,
+      "projected_input": 0.921,
+      "projected_minus_raw": -0.004
+    },
+    "rho": {
+      "raw": 0.927,
+      "projected_input": 0.935,
+      "projected_minus_raw": 0.008
+    },
+    "tau": {
+      "raw": 0.888,
+      "projected_input": 0.898,
+      "projected_minus_raw": 0.01
+    }
+  },
+  "aggregate_error_constraints": {
+    "raw": {
+      "pairs": 10000,
+      "exact_pairs_from_rounded_acc": 7570,
+      "non_exact_pairs_from_rounded_acc": 2430,
+      "below_gt_pairs_from_rounded_fea": 750,
+      "above_gt_pairs_from_rounded_acc_and_fea": 1680,
+      "absolute_error_sum_interval_from_rounded_mae": [
+        2625,
+        2634
+      ],
+      "squared_error_sum_interval_from_rounded_mse": [
+        3055,
+        3064
+      ],
+      "minimum_absolute_error_sum_if_every_wrong_pair_is_off_by_one": 2430,
+      "central_absolute_error_beyond_off_by_one_minimum": 200,
+      "illustrative_error_magnitude_reconstruction": {
+        "assumption": "central rounded metrics and no |error| above 3",
+        "abs_error_1_pairs": 2245,
+        "abs_error_2_pairs": 170,
+        "abs_error_3_pairs": 15
+      },
+      "warning": "Counts are inferred from three-decimal aggregate metrics. Exact per-pair buckets require rerunning frozen-checkpoint inference while saving mappings."
+    },
+    "projected_input": {
+      "pairs": 10000,
+      "exact_pairs_from_rounded_acc": 7730,
+      "non_exact_pairs_from_rounded_acc": 2270,
+      "below_gt_pairs_from_rounded_fea": 790,
+      "above_gt_pairs_from_rounded_acc_and_fea": 1480,
+      "absolute_error_sum_interval_from_rounded_mae": [
+        2415,
+        2424
+      ],
+      "squared_error_sum_interval_from_rounded_mse": [
+        2725,
+        2734
+      ],
+      "minimum_absolute_error_sum_if_every_wrong_pair_is_off_by_one": 2270,
+      "central_absolute_error_beyond_off_by_one_minimum": 150,
+      "illustrative_error_magnitude_reconstruction": {
+        "assumption": "central rounded metrics and no |error| above 3",
+        "abs_error_1_pairs": 2125,
+        "abs_error_2_pairs": 140,
+        "abs_error_3_pairs": 5
+      },
+      "warning": "Counts are inferred from three-decimal aggregate metrics. Exact per-pair buckets require rerunning frozen-checkpoint inference while saving mappings."
+    }
+  },
+  "next_required_audit": {
+    "requires_retraining": false,
+    "requires_frozen_checkpoint_inference": true,
+    "reason": "Existing V15 summaries do not contain per-pair predicted GED or node mappings. Save those mappings once, then replay both the legacy dense evaluator and the official simple last-write executable-path evaluator on exactly the same correspondence."
+  }
+}
