@@ -21,8 +21,19 @@ encoder followed by cross-graph attention and a learned pair scorer:
 G1/G2 relation-aware encoding
         -> cross-graph query-key compatibility
         -> node-pair assignment logits
-        -> existing differentiable Gumbel-Sinkhorn rollout
+        -> direct rectangular Gumbel-Sinkhorn rollout
 ```
+
+Training does not add diffusion noise or a timestep. Inference encodes each
+pair once, samples assignments directly from the logits, and chooses the
+lowest unit-GED candidate. Rectangular matrices use dummy source rows during
+Sinkhorn so real source rows form an injective mapping and unmatched target
+nodes retain their original insertion interpretation.
+
+Training pads all graph pairs in a mini-batch to `max(n2)` and applies masked
+Sinkhorn normalization in one batched tensor. Padding never participates in
+the assignment, and the batched implementation is deterministically
+equivalent to applying the same padded Sinkhorn operation pair by pair.
 
 The existing trainer still computes candidate GED with the V16 official graph
 view and trains the unchanged BPR ranking critic. No semantic distance is
