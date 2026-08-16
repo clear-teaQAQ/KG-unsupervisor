@@ -5,7 +5,9 @@ import importlib.util
 import json
 import sys
 
+import numpy as np
 import torch
+import torch.nn.functional as F
 
 
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -19,7 +21,9 @@ from v14_models import (  # noqa: E402
     MatchingConditionedEdgeDiscriminator,
     RelationAwareDiffMatch,
     RelationAwareDiscriminator,
+    attach_v14_edge_reasoning_cache,
 )
+from src.GEDRanker.loss_fn import mapping_loss, roll_out_gumbel  # noqa: E402
 
 
 def _load_v11_trainer_class():
@@ -48,7 +52,21 @@ class V14RelationAwareTrainer(V11RelationAwareTrainer):
             raise ValueError("V14_MODE must be baseline or matched_edge.")
         self.preference_audit_history = []
         self._preference_audit_step = 0
+        self.edge_cache_pairs = 0
+        self.edge_cache_fallback_pairs = 0
+        self.edge_cache_combinations = 0
         super().__init__(args)
+
+    def pack_graph_pair(self, pair):
+        data = super().pack_graph_pair(pair)
+        if self.v14_mode == "matched_edge" and bool(
+            getattr(self.args, "v14_edge_cache", False)
+        ):
+            cache = attach_v14_edge_reasoning_cache(data)
+            self.edge_cache_pairs += 1
+            self.edge_cache_fallback_pairs += int(not cache["valid"])
+            self.edge_cache_combinations += cache["edge_combinations"]
+        return data
 
     def setup_model(self):
         self.model = RelationAwareDiffMatch(
@@ -109,9 +127,17 @@ class V14RelationAwareTrainer(V11RelationAwareTrainer):
         print("V14 preference audit:", json.dumps(record, sort_keys=True))
 
     def process_batch(self, batch, indices):
-        result = super().process_batch(batch, indices)
+        exploration_epochs = self.args.model_epoch_end / 2
+        use_fast_path = bool(getattr(self.args, "v14_fast_path", False))
+        if self.cur_epoch < exploration_epochs or not use_fast_path:
+            result = super().process_batch(batch, indices)
+        else:
+            result = self._process_exploitation_only_batch(batch, indices)
+
         self._preference_audit_step += 1
-        interval = max(int(getattr(self.args, "v14_pref_audit_interval", 20)), 1)
+        interval = int(getattr(self.args, "v14_pref_audit_interval", 0))
+        if interval <= 0:
+            return result
         if self._preference_audit_step % interval != 0:
             return result
 
@@ -132,6 +158,60 @@ class V14RelationAwareTrainer(V11RelationAwareTrainer):
         self._audit_gap_large_correct += int(correct[gap_large].sum().item())
         self._audit_gap_large_total += int(gap_large.sum().item())
         return result
+
+    def _process_exploitation_only_batch(self, batch, indices):
+        """Preserve V14's alpha=0 objective without zero-weight D forwards."""
+        batch_size = int(torch.max(batch.batch).item()) + 1
+        best_mapping_label, best_ged = batch.best_mapping_label, batch.best_ged
+        timestep = np.random.randint(1, self.diffusion.T + 1, batch_size).astype(int)
+        best_mapping_onehot = F.one_hot(
+            best_mapping_label.long(), num_classes=2
+        ).float()
+        mapping_batch = batch.batch[batch.edge_index_mapping[0]]
+        diffused_mapping = self.diffusion.sample(
+            best_mapping_onehot, timestep, mapping_batch
+        )
+        timestep = torch.from_numpy(timestep).float().to(self.device)
+        pred_mapping_label = self.model(
+            batch, diffused_mapping.to(self.device), timestep
+        )
+        _, pred_solution, _ = roll_out_gumbel(
+            pred_mapping_label,
+            batch,
+            self.args.tau,
+            self.args.gumbel_iteration,
+        )
+        pred_ged = self._compute_batch_ged(pred_solution, batch)
+        map_loss = mapping_loss(pred_mapping_label, batch, best_mapping_label)
+        self.optimizer.zero_grad()
+        map_loss.backward()
+        self.optimizer.step()
+
+        new_solution = 0
+        for index in range(len(indices)):
+            graph = self.training_graphs[indices[index]]
+            mask = batch.batch[batch.edge_index_mapping[0]] == index
+            graph.last_mapping_label = pred_solution[mask].to(
+                graph.last_mapping_label.device
+            )
+            graph.last_ged = pred_ged[index].to(graph.last_ged.device)
+            if pred_ged[index] < best_ged[index]:
+                new_solution += 1
+                graph.best_ged = pred_ged[index].to(graph.best_ged.device)
+                graph.best_mapping_label = pred_solution[mask].to(
+                    graph.best_mapping_label.device
+                )
+
+        return (
+            map_loss.item(),
+            0.0,
+            pred_ged.sum().item(),
+            batch.ged.sum().item(),
+            best_ged.sum().item(),
+            map_loss.item(),
+            0.0,
+            new_solution,
+        )
 
     def save(self, epoch):
         super().save(epoch)
@@ -172,6 +252,24 @@ class V14RelationAwareTrainer(V11RelationAwareTrainer):
             "preference_label": "strict_original_unit_ged_ordering",
             "primary_metrics": ["mae", "acc"],
             "preference_audit": self.preference_audit_history,
+            "preference_audit_interval": int(
+                getattr(self.args, "v14_pref_audit_interval", 0)
+            ),
+            "edge_reasoning_implementation": (
+                "cached_vectorized_raw_last_write"
+                if bool(getattr(self.args, "v14_vectorized_edge", False))
+                else (
+                    "cached_pairwise_raw_last_write"
+                    if bool(getattr(self.args, "v14_edge_cache", False))
+                    else "legacy_pairwise_dense_adjacency"
+                )
+            ),
+            "alpha_zero_discriminator_forward_skipped": bool(
+                getattr(self.args, "v14_fast_path", False)
+            ),
+            "edge_cache_pairs": self.edge_cache_pairs,
+            "edge_cache_fallback_pairs": self.edge_cache_fallback_pairs,
+            "edge_cache_combinations": self.edge_cache_combinations,
             "discriminator_checkpoint_path": str(
                 getattr(self, "discriminator_checkpoint_path", "")
             ),

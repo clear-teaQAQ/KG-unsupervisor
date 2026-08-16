@@ -5,47 +5,32 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DATA_ROOT="${DATA_ROOT:-/data/projects/SEABED-main/data}"
 DATASETS="${DATASETS:-LUBM SWDF}"
 PYTHON_BIN="${PYTHON_BIN:-/home/vermouth/miniconda3/envs/gedranker/bin/python}"
-RELATION_MODE="${RELATION_MODE:-raw}"
-V14_MODE="${V14_MODE:-baseline}"
-V14_GATE_INIT="${V14_GATE_INIT:-0.0}"
-V14_EDGE_HIDDEN_DIM="${V14_EDGE_HIDDEN_DIM:-32}"
-V14_FAST_PATH="${V14_FAST_PATH:-0}"
-V14_EDGE_CACHE="${V14_EDGE_CACHE:-0}"
-V14_VECTORIZED_EDGE="${V14_VECTORIZED_EDGE:-0}"
-V14_PREF_AUDIT_INTERVAL="${V14_PREF_AUDIT_INTERVAL:-0}"
-MODEL_NAME="${MODEL_NAME:-GEDRankerSEABED_v14_${V14_MODE}_${RELATION_MODE}_col3_unit}"
+V19_MODE="${V19_MODE:-generator_edge}"
 MODEL_PATH="${SCRIPT_DIR}/checkpoints"
 RESULT_PATH="${SCRIPT_DIR}/training_results"
 
-if [[ ! -x "${PYTHON_BIN}" ]]; then
-  echo "Python interpreter is not executable: ${PYTHON_BIN}" >&2
-  exit 2
-fi
-
 if [[ "${SMOKE:-0}" == "1" ]]; then
   EPOCHS="${EPOCHS:-1}"
-  MAX_TRAIN_PAIRS="${MAX_TRAIN_PAIRS:-16}"
+  TEST_K="${TEST_K:-3}"
+  MAX_TRAIN_PAIRS="${MAX_TRAIN_PAIRS:-32}"
   MAX_VAL_PAIRS="${MAX_VAL_PAIRS:-8}"
   MAX_TEST_PAIRS="${MAX_TEST_PAIRS:-20}"
-  TEST_K="${TEST_K:-1}"
 else
   EPOCHS="${EPOCHS:-200}"
+  TEST_K="${TEST_K:-100}"
   MAX_TRAIN_PAIRS="${MAX_TRAIN_PAIRS:-0}"
   MAX_VAL_PAIRS="${MAX_VAL_PAIRS:-0}"
   MAX_TEST_PAIRS="${MAX_TEST_PAIRS:-0}"
-  TEST_K="${TEST_K:-100}"
 fi
 
 for DATASET in ${DATASETS}; do
-  RELATION_MODE="${RELATION_MODE}" \
-    V14_MODE="${V14_MODE}" \
-    V14_GATE_INIT="${V14_GATE_INIT}" \
-    V14_EDGE_HIDDEN_DIM="${V14_EDGE_HIDDEN_DIM}" \
-    V14_FAST_PATH="${V14_FAST_PATH}" \
-    V14_EDGE_CACHE="${V14_EDGE_CACHE}" \
-    V14_VECTORIZED_EDGE="${V14_VECTORIZED_EDGE}" \
-    V14_PREF_AUDIT_INTERVAL="${V14_PREF_AUDIT_INTERVAL}" \
-    SEED="${SEED:-0}" \
+  echo "V19 training: dataset=${DATASET} mode=${V19_MODE} epochs=${EPOCHS}"
+  SEED="${SEED:-0}" \
+    V19_MODE="${V19_MODE}" \
+    V19_GATE_INIT="${V19_GATE_INIT:-0.0}" \
+    V19_EDGE_HIDDEN_DIM="${V19_EDGE_HIDDEN_DIM:-32}" \
+    V18_GATE_INIT="${V18_GATE_INIT:-0.0}" \
+    V18_EDGE_HIDDEN_DIM="${V18_EDGE_HIDDEN_DIM:-32}" \
     "${PYTHON_BIN}" "${SCRIPT_DIR}/main.py" \
       --dataset "${DATASET}" \
       --dataset-root "${DATA_ROOT}/${DATASET}" \
@@ -60,7 +45,8 @@ for DATASET in ${DATASETS}; do
       --max-train-pairs "${MAX_TRAIN_PAIRS}" \
       --max-val-pairs "${MAX_VAL_PAIRS}" \
       --max-test-pairs "${MAX_TEST_PAIRS}" \
-      --model-name "${MODEL_NAME}" \
+      --model-name "GEDRankerSEABED_v19_${V19_MODE}" \
       --model-path "${MODEL_PATH}" \
       --result-path "${RESULT_PATH}"
 done
+

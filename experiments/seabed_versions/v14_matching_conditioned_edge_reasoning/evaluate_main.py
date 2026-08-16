@@ -37,8 +37,11 @@ def main():
     args.v14_gate_init = float(os.environ.get("V14_GATE_INIT", "0.0"))
     args.v14_edge_hidden_dim = int(os.environ.get("V14_EDGE_HIDDEN_DIM", "32"))
     args.v14_pref_audit_interval = int(
-        os.environ.get("V14_PREF_AUDIT_INTERVAL", "20")
+        os.environ.get("V14_PREF_AUDIT_INTERVAL", "0")
     )
+    args.v14_fast_path = os.environ.get("V14_FAST_PATH", "0") == "1"
+    args.v14_edge_cache = os.environ.get("V14_EDGE_CACHE", "0") == "1"
+    args.v14_vectorized_edge = os.environ.get("V14_VECTORIZED_EDGE", "0") == "1"
     checkpoint_path = os.environ.get("CHECKPOINT_PATH")
     if not checkpoint_path:
         raise ValueError("Set CHECKPOINT_PATH to a V14 generator checkpoint.")

@@ -14,7 +14,7 @@ for path in (PROJECT_ROOT, CURRENT_DIR):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 
-from relation_trainer import V14RelationAwareTrainer  # noqa: E402
+from relation_trainer import V19GeneratorEdgeGuidanceTrainer  # noqa: E402
 from src.SEABED.param_parser import parameter_parser  # noqa: E402
 from src.SEABED.utils import tab_printer  # noqa: E402
 
@@ -29,37 +29,39 @@ def seed_everything(seed):
     torch.backends.cudnn.benchmark = False
 
 
+def configure_v19(args):
+    args.dataset_root = str(Path(args.dataset_root).resolve())
+    args.relation_mode = "raw"
+    args.v15_mode = "projected_input"
+    args.v18_mode = "matched_edge"
+    args.v18_gate_init = float(os.environ.get("V18_GATE_INIT", "0.0"))
+    args.v18_edge_hidden_dim = int(os.environ.get("V18_EDGE_HIDDEN_DIM", "32"))
+    args.v19_mode = os.environ.get("V19_MODE", "generator_edge")
+    args.v19_gate_init = float(os.environ.get("V19_GATE_INIT", "0.0"))
+    args.v19_edge_hidden_dim = int(os.environ.get("V19_EDGE_HIDDEN_DIM", "32"))
+    if args.v19_mode not in {"baseline", "generator_edge"}:
+        raise ValueError("V19_MODE must be baseline or generator_edge.")
+    if args.use_raw_features != 1 or args.ged_column != 3 or args.cost_mode != "unit":
+        raise ValueError("V19 requires raw features and unchanged column-3 unit GED.")
+    return args
+
+
 def main():
     seed_everything(int(os.environ.get("SEED", "0")))
-    args = parameter_parser()
-    args.dataset_root = str(Path(args.dataset_root).resolve())
-    args.relation_mode = os.environ.get("RELATION_MODE", "raw")
-    args.v14_mode = os.environ.get("V14_MODE", "baseline")
-    args.v14_gate_init = float(os.environ.get("V14_GATE_INIT", "0.0"))
-    args.v14_edge_hidden_dim = int(os.environ.get("V14_EDGE_HIDDEN_DIM", "32"))
-    args.v14_pref_audit_interval = int(
-        os.environ.get("V14_PREF_AUDIT_INTERVAL", "0")
-    )
-    args.v14_fast_path = os.environ.get("V14_FAST_PATH", "0") == "1"
-    args.v14_edge_cache = os.environ.get("V14_EDGE_CACHE", "0") == "1"
-    args.v14_vectorized_edge = os.environ.get("V14_VECTORIZED_EDGE", "0") == "1"
-    if args.v14_mode not in {"baseline", "matched_edge"}:
-        raise ValueError("V14_MODE must be baseline or matched_edge.")
-    if args.relation_mode not in {"raw", "constant", "shuffled"}:
-        raise ValueError("RELATION_MODE must be raw, constant, or shuffled.")
-    if args.use_raw_features != 1 or args.ged_column != 3 or args.cost_mode != "unit":
-        raise ValueError(
-            "V14 preserves V11: use_raw_features=1, ged_column=3, cost_mode=unit."
-        )
+    args = configure_v19(parameter_parser())
     if args.model_train != 1 or args.model_epoch_start != 0:
-        raise ValueError("V14 trains from scratch with model_train=1 and epoch_start=0.")
+        raise ValueError("V19 formal training starts from epoch 0.")
 
     print(
-        "V14 objective: change candidate evidence, not unit-GED cost or BPR labels; "
-        "V11 MAE/ACC remain the hard baseline."
+        "V19 objective: unchanged column-3 unit GED and BPR preference; "
+        "relation evidence changes only generator candidate production."
+    )
+    print(
+        "V19 runtime policy: cached batched index_add evidence and no "
+        "data-dependent abort audits."
     )
     tab_printer(args)
-    trainer = V14RelationAwareTrainer(args)
+    trainer = V19GeneratorEdgeGuidanceTrainer(args)
     for epoch in range(args.model_epoch_end):
         trainer.cur_epoch = epoch
         trainer.fit()
@@ -72,28 +74,32 @@ def main():
         top_k_approach=args.topk_approach,
     )
     manifest_path = trainer.result_dir / (
-        f"manifest_{args.dataset}_{args.v14_mode}_{args.relation_mode}_epoch"
+        f"manifest_{args.dataset}_{args.v19_mode}_epoch"
         f"{args.model_epoch_end}_{trainer.run_timestamp}.json"
     )
     manifest = {
         "version": trainer.version,
-        "v14_revision": trainer.v14_revision,
-        "v14_mode": args.v14_mode,
-        "relation_revision": trainer.relation_revision,
-        "relation_mode": args.relation_mode,
+        "v19_revision": trainer.v19_revision,
+        "v19_mode": args.v19_mode,
         "dataset": args.dataset,
         "epochs": args.model_epoch_end,
         "checkpoint_path": str(trainer.saved_checkpoint_path),
         "discriminator_checkpoint_path": str(
             getattr(trainer, "discriminator_checkpoint_path", "")
         ),
+        "cost_mode": "unit",
+        "ged_column": 3,
+        "ground_truth_changed": False,
+        "preference_definition_changed": False,
         "primary_metrics": ["mae", "acc"],
         "result": result,
     }
-    with open(manifest_path, "w", encoding="utf-8") as handle:
+    with manifest_path.open("w", encoding="utf-8") as handle:
         json.dump(manifest, handle, indent=2)
-    print("Saved V14 manifest:", manifest_path)
+        handle.write("\n")
+    print("Saved V19 manifest:", manifest_path)
 
 
 if __name__ == "__main__":
     main()
+
