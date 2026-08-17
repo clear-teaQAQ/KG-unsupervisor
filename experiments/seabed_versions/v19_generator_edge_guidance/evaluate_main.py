@@ -44,6 +44,22 @@ def main():
     trainer = V19GeneratorEdgeGuidanceTrainer(args)
     trainer.load_explicit_checkpoint(checkpoint_path)
     trainer.load_discriminator_checkpoint(discriminator_path)
+    gate_override = os.environ.get("V19_EVAL_GENERATOR_GATE_RAW_OVERRIDE")
+    if gate_override is not None:
+        if not hasattr(trainer.model, "generator_edge_gate"):
+            raise ValueError(
+                "Generator gate override requires V19_MODE=generator_edge."
+            )
+        gate_override = float(gate_override)
+        with torch.no_grad():
+            trainer.model.generator_edge_gate.fill_(gate_override)
+        args.v19_eval_generator_gate_raw_override = gate_override
+        print(
+            "V19 evaluation-only generator gate override:",
+            gate_override,
+            "effective=",
+            float(trainer.model.effective_generator_edge_gate.detach().cpu()),
+        )
     trainer.score(
         testing_graph_set=args.testset,
         test_k=args.test_k,
@@ -53,4 +69,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

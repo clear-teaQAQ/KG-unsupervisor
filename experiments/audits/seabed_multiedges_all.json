@@ -1,0 +1,2420 @@
+{
+  "audit": "seabed_undirected_parallel_edge_audit_v1",
+  "definition": "(u,v) and (v,u) share one undirected endpoint key; repeated raw occurrences are parallel edges, matching V16 last-write projection",
+  "read_only": true,
+  "ground_truth_changed": false,
+  "unit_cost_changed": false,
+  "preference_labels_changed": false,
+  "data_root": "/data/projects/SEABED-main/data",
+  "splits": [
+    "train",
+    "val",
+    "test"
+  ],
+  "datasets": {
+    "LUBM": {
+      "all": {
+        "graphs": 1000,
+        "graphs_with_parallel_edges": 0,
+        "nodes": 7503,
+        "raw_edges": 6659,
+        "undirected_endpoint_pairs": 6659,
+        "duplicate_occurrences": 0,
+        "parallel_endpoint_groups": 0,
+        "same_label_parallel_groups": 0,
+        "mixed_label_parallel_groups": 0,
+        "same_directed_duplicate_groups": 0,
+        "max_multiplicity": 1,
+        "multiplicity_histogram": {
+          "1": 6659
+        },
+        "top_affected_graphs": [],
+        "graph_parallel_rate": 0.0,
+        "duplicate_occurrence_rate": 0.0,
+        "mixed_label_parallel_group_rate": 0.0
+      },
+      "by_split": {
+        "train": {
+          "graphs": 600,
+          "graphs_with_parallel_edges": 0,
+          "nodes": 4523,
+          "raw_edges": 4016,
+          "undirected_endpoint_pairs": 4016,
+          "duplicate_occurrences": 0,
+          "parallel_endpoint_groups": 0,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 0,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 1,
+          "multiplicity_histogram": {
+            "1": 4016
+          },
+          "top_affected_graphs": [],
+          "graph_parallel_rate": 0.0,
+          "duplicate_occurrence_rate": 0.0,
+          "mixed_label_parallel_group_rate": 0.0
+        },
+        "val": {
+          "graphs": 200,
+          "graphs_with_parallel_edges": 0,
+          "nodes": 1489,
+          "raw_edges": 1321,
+          "undirected_endpoint_pairs": 1321,
+          "duplicate_occurrences": 0,
+          "parallel_endpoint_groups": 0,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 0,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 1,
+          "multiplicity_histogram": {
+            "1": 1321
+          },
+          "top_affected_graphs": [],
+          "graph_parallel_rate": 0.0,
+          "duplicate_occurrence_rate": 0.0,
+          "mixed_label_parallel_group_rate": 0.0
+        },
+        "test": {
+          "graphs": 200,
+          "graphs_with_parallel_edges": 0,
+          "nodes": 1491,
+          "raw_edges": 1322,
+          "undirected_endpoint_pairs": 1322,
+          "duplicate_occurrences": 0,
+          "parallel_endpoint_groups": 0,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 0,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 1,
+          "multiplicity_histogram": {
+            "1": 1322
+          },
+          "top_affected_graphs": [],
+          "graph_parallel_rate": 0.0,
+          "duplicate_occurrence_rate": 0.0,
+          "mixed_label_parallel_group_rate": 0.0
+        }
+      },
+      "pair_exposure": {
+        "train": {
+          "available": true,
+          "pairs": 30000,
+          "known_pairs": 30000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 0,
+          "exposure_rate": 0.0,
+          "pairs_with_both_parallel_graphs": 0
+        },
+        "val": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 0,
+          "exposure_rate": 0.0,
+          "pairs_with_both_parallel_graphs": 0
+        },
+        "test": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 0,
+          "exposure_rate": 0.0,
+          "pairs_with_both_parallel_graphs": 0
+        }
+      }
+    },
+    "SWDF": {
+      "all": {
+        "graphs": 1000,
+        "graphs_with_parallel_edges": 678,
+        "nodes": 7487,
+        "raw_edges": 8124,
+        "undirected_endpoint_pairs": 6701,
+        "duplicate_occurrences": 1423,
+        "parallel_endpoint_groups": 1217,
+        "same_label_parallel_groups": 0,
+        "mixed_label_parallel_groups": 1217,
+        "same_directed_duplicate_groups": 654,
+        "max_multiplicity": 4,
+        "multiplicity_histogram": {
+          "1": 5484,
+          "2": 1051,
+          "3": 126,
+          "4": 40
+        },
+        "top_affected_graphs": [
+          {
+            "split": "train",
+            "graph": "graphPair_562.json",
+            "raw_edges": 18,
+            "duplicate_occurrences": 9,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_29.json",
+            "raw_edges": 20,
+            "duplicate_occurrences": 9,
+            "parallel_endpoint_groups": 7,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_513.json",
+            "raw_edges": 17,
+            "duplicate_occurrences": 8,
+            "parallel_endpoint_groups": 6,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_170.json",
+            "raw_edges": 16,
+            "duplicate_occurrences": 7,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_73.json",
+            "raw_edges": 14,
+            "duplicate_occurrences": 7,
+            "parallel_endpoint_groups": 5,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_909.json",
+            "raw_edges": 17,
+            "duplicate_occurrences": 7,
+            "parallel_endpoint_groups": 6,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_359.json",
+            "raw_edges": 10,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 3,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_666.json",
+            "raw_edges": 13,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_770.json",
+            "raw_edges": 11,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 3,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_433.json",
+            "raw_edges": 14,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_680.json",
+            "raw_edges": 15,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_428.json",
+            "raw_edges": 14,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 3,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_81.json",
+            "raw_edges": 15,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 5,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_814.json",
+            "raw_edges": 15,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_708.json",
+            "raw_edges": 14,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 5,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_840.json",
+            "raw_edges": 11,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 4,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_252.json",
+            "raw_edges": 16,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 5,
+            "max_multiplicity": 3
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_530.json",
+            "raw_edges": 20,
+            "duplicate_occurrences": 6,
+            "parallel_endpoint_groups": 6,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_879.json",
+            "raw_edges": 13,
+            "duplicate_occurrences": 5,
+            "parallel_endpoint_groups": 3,
+            "max_multiplicity": 4
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_191.json",
+            "raw_edges": 12,
+            "duplicate_occurrences": 5,
+            "parallel_endpoint_groups": 3,
+            "max_multiplicity": 4
+          }
+        ],
+        "graph_parallel_rate": 0.678,
+        "duplicate_occurrence_rate": 0.17516001969473166,
+        "mixed_label_parallel_group_rate": 1.0
+      },
+      "by_split": {
+        "train": {
+          "graphs": 600,
+          "graphs_with_parallel_edges": 398,
+          "nodes": 4446,
+          "raw_edges": 4797,
+          "undirected_endpoint_pairs": 3972,
+          "duplicate_occurrences": 825,
+          "parallel_endpoint_groups": 711,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 711,
+          "same_directed_duplicate_groups": 369,
+          "max_multiplicity": 4,
+          "multiplicity_histogram": {
+            "1": 3261,
+            "2": 616,
+            "3": 76,
+            "4": 19
+          },
+          "top_affected_graphs": [
+            {
+              "split": "train",
+              "graph": "graphPair_562.json",
+              "raw_edges": 18,
+              "duplicate_occurrences": 9,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_513.json",
+              "raw_edges": 17,
+              "duplicate_occurrences": 8,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170.json",
+              "raw_edges": 16,
+              "duplicate_occurrences": 7,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_73.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 7,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_433.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_708.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_840.json",
+              "raw_edges": 11,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_530.json",
+              "raw_edges": 20,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_191.json",
+              "raw_edges": 12,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_319.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_476.json",
+              "raw_edges": 9,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_558.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_1.json",
+              "raw_edges": 15,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_507.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_622.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_670.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_717.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_837.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_354.json",
+              "raw_edges": 8,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_877.json",
+              "raw_edges": 9,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            }
+          ],
+          "graph_parallel_rate": 0.6633333333333333,
+          "duplicate_occurrence_rate": 0.1719824890556598,
+          "mixed_label_parallel_group_rate": 1.0
+        },
+        "val": {
+          "graphs": 200,
+          "graphs_with_parallel_edges": 137,
+          "nodes": 1535,
+          "raw_edges": 1672,
+          "undirected_endpoint_pairs": 1376,
+          "duplicate_occurrences": 296,
+          "parallel_endpoint_groups": 253,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 253,
+          "same_directed_duplicate_groups": 147,
+          "max_multiplicity": 4,
+          "multiplicity_histogram": {
+            "1": 1123,
+            "2": 220,
+            "3": 23,
+            "4": 10
+          },
+          "top_affected_graphs": [
+            {
+              "split": "val",
+              "graph": "graphPair_909.json",
+              "raw_edges": 17,
+              "duplicate_occurrences": 7,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_680.json",
+              "raw_edges": 15,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_252.json",
+              "raw_edges": 16,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_323.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_500.json",
+              "raw_edges": 16,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_674.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_803.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_720.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_808.json",
+              "raw_edges": 12,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_280.json",
+              "raw_edges": 8,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_466.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_653.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_161.json",
+              "raw_edges": 11,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_217.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_327.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_548.json",
+              "raw_edges": 9,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_69.json",
+              "raw_edges": 11,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_795.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_782.json",
+              "raw_edges": 12,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_901.json",
+              "raw_edges": 12,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.685,
+          "duplicate_occurrence_rate": 0.17703349282296652,
+          "mixed_label_parallel_group_rate": 1.0
+        },
+        "test": {
+          "graphs": 200,
+          "graphs_with_parallel_edges": 143,
+          "nodes": 1506,
+          "raw_edges": 1655,
+          "undirected_endpoint_pairs": 1353,
+          "duplicate_occurrences": 302,
+          "parallel_endpoint_groups": 253,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 253,
+          "same_directed_duplicate_groups": 138,
+          "max_multiplicity": 4,
+          "multiplicity_histogram": {
+            "1": 1100,
+            "2": 215,
+            "3": 27,
+            "4": 11
+          },
+          "top_affected_graphs": [
+            {
+              "split": "test",
+              "graph": "graphPair_29.json",
+              "raw_edges": 20,
+              "duplicate_occurrences": 9,
+              "parallel_endpoint_groups": 7,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_359.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_666.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_770.json",
+              "raw_edges": 11,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_428.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_81.json",
+              "raw_edges": 15,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_814.json",
+              "raw_edges": 15,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 4,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_879.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_422.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_265.json",
+              "raw_edges": 11,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_297.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_520.json",
+              "raw_edges": 10,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_561.json",
+              "raw_edges": 13,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_581.json",
+              "raw_edges": 8,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_606.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_729.json",
+              "raw_edges": 9,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 4
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_587.json",
+              "raw_edges": 12,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_588.json",
+              "raw_edges": 9,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_70.json",
+              "raw_edges": 17,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_780.json",
+              "raw_edges": 14,
+              "duplicate_occurrences": 4,
+              "parallel_endpoint_groups": 3,
+              "max_multiplicity": 3
+            }
+          ],
+          "graph_parallel_rate": 0.715,
+          "duplicate_occurrence_rate": 0.1824773413897281,
+          "mixed_label_parallel_group_rate": 1.0
+        }
+      },
+      "pair_exposure": {
+        "train": {
+          "available": true,
+          "pairs": 30000,
+          "known_pairs": 30000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 26625,
+          "exposure_rate": 0.8875,
+          "pairs_with_both_parallel_graphs": 13257
+        },
+        "val": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 9019,
+          "exposure_rate": 0.9019,
+          "pairs_with_both_parallel_graphs": 4661
+        },
+        "test": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 9231,
+          "exposure_rate": 0.9231,
+          "pairs_with_both_parallel_graphs": 5105
+        }
+      }
+    },
+    "YAGO": {
+      "all": {
+        "graphs": 31000,
+        "graphs_with_parallel_edges": 204,
+        "nodes": 757745,
+        "raw_edges": 841353,
+        "undirected_endpoint_pairs": 841147,
+        "duplicate_occurrences": 206,
+        "parallel_endpoint_groups": 206,
+        "same_label_parallel_groups": 0,
+        "mixed_label_parallel_groups": 206,
+        "same_directed_duplicate_groups": 103,
+        "max_multiplicity": 2,
+        "multiplicity_histogram": {
+          "1": 840941,
+          "2": 206
+        },
+        "top_affected_graphs": [
+          {
+            "split": "train",
+            "graph": "graphPair_790_15.json",
+            "raw_edges": 21,
+            "duplicate_occurrences": 2,
+            "parallel_endpoint_groups": 2,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "train",
+            "graph": "graphPair_790_8.json",
+            "raw_edges": 25,
+            "duplicate_occurrences": 2,
+            "parallel_endpoint_groups": 2,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_498_17.json",
+            "raw_edges": 25,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_498_4.json",
+            "raw_edges": 27,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_572_16.json",
+            "raw_edges": 22,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_572_6.json",
+            "raw_edges": 22,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692.json",
+            "raw_edges": 26,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_0.json",
+            "raw_edges": 30,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_1.json",
+            "raw_edges": 31,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_10.json",
+            "raw_edges": 32,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_11.json",
+            "raw_edges": 32,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_12.json",
+            "raw_edges": 34,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_13.json",
+            "raw_edges": 30,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_14.json",
+            "raw_edges": 33,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_15.json",
+            "raw_edges": 33,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_16.json",
+            "raw_edges": 30,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_17.json",
+            "raw_edges": 31,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_18.json",
+            "raw_edges": 30,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_19.json",
+            "raw_edges": 35,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "test",
+            "graph": "graphPair_692_2.json",
+            "raw_edges": 29,
+            "duplicate_occurrences": 1,
+            "parallel_endpoint_groups": 1,
+            "max_multiplicity": 2
+          }
+        ],
+        "graph_parallel_rate": 0.006580645161290323,
+        "duplicate_occurrence_rate": 0.00024484372195737107,
+        "mixed_label_parallel_group_rate": 1.0
+      },
+      "by_split": {
+        "train": {
+          "graphs": 18600,
+          "graphs_with_parallel_edges": 127,
+          "nodes": 455745,
+          "raw_edges": 508957,
+          "undirected_endpoint_pairs": 508828,
+          "duplicate_occurrences": 129,
+          "parallel_endpoint_groups": 129,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 129,
+          "same_directed_duplicate_groups": 94,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 508699,
+            "2": 129
+          },
+          "top_affected_graphs": [
+            {
+              "split": "train",
+              "graph": "graphPair_790_15.json",
+              "raw_edges": 21,
+              "duplicate_occurrences": 2,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_790_8.json",
+              "raw_edges": 25,
+              "duplicate_occurrences": 2,
+              "parallel_endpoint_groups": 2,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_197_22.json",
+              "raw_edges": 22,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_22_23.json",
+              "raw_edges": 33,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_0.json",
+              "raw_edges": 22,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_10.json",
+              "raw_edges": 21,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_14.json",
+              "raw_edges": 24,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_19.json",
+              "raw_edges": 24,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_20.json",
+              "raw_edges": 23,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_23.json",
+              "raw_edges": 23,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_29.json",
+              "raw_edges": 20,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_252_9.json",
+              "raw_edges": 20,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_291_11.json",
+              "raw_edges": 28,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_384_26.json",
+              "raw_edges": 28,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_480_24.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_480_5.json",
+              "raw_edges": 28,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_486.json",
+              "raw_edges": 26,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_486_0.json",
+              "raw_edges": 35,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_486_1.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_486_10.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.006827956989247312,
+          "duplicate_occurrence_rate": 0.0002534595260503343,
+          "mixed_label_parallel_group_rate": 1.0
+        },
+        "val": {
+          "graphs": 6200,
+          "graphs_with_parallel_edges": 40,
+          "nodes": 149989,
+          "raw_edges": 164953,
+          "undirected_endpoint_pairs": 164913,
+          "duplicate_occurrences": 40,
+          "parallel_endpoint_groups": 40,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 40,
+          "same_directed_duplicate_groups": 7,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 164873,
+            "2": 40
+          },
+          "top_affected_graphs": [
+            {
+              "split": "val",
+              "graph": "graphPair_10_15.json",
+              "raw_edges": 21,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_163_25.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274.json",
+              "raw_edges": 22,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_0.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_1.json",
+              "raw_edges": 25,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_10.json",
+              "raw_edges": 27,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_11.json",
+              "raw_edges": 27,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_12.json",
+              "raw_edges": 27,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_13.json",
+              "raw_edges": 27,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_14.json",
+              "raw_edges": 26,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_15.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_16.json",
+              "raw_edges": 26,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_17.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_18.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_19.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_2.json",
+              "raw_edges": 28,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_20.json",
+              "raw_edges": 25,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_21.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_22.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_274_23.json",
+              "raw_edges": 26,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.0064516129032258064,
+          "duplicate_occurrence_rate": 0.00024249331627797008,
+          "mixed_label_parallel_group_rate": 1.0
+        },
+        "test": {
+          "graphs": 6200,
+          "graphs_with_parallel_edges": 37,
+          "nodes": 152011,
+          "raw_edges": 167443,
+          "undirected_endpoint_pairs": 167406,
+          "duplicate_occurrences": 37,
+          "parallel_endpoint_groups": 37,
+          "same_label_parallel_groups": 0,
+          "mixed_label_parallel_groups": 37,
+          "same_directed_duplicate_groups": 2,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 167369,
+            "2": 37
+          },
+          "top_affected_graphs": [
+            {
+              "split": "test",
+              "graph": "graphPair_498_17.json",
+              "raw_edges": 25,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_498_4.json",
+              "raw_edges": 27,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_572_16.json",
+              "raw_edges": 22,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_572_6.json",
+              "raw_edges": 22,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692.json",
+              "raw_edges": 26,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_0.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_1.json",
+              "raw_edges": 31,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_10.json",
+              "raw_edges": 32,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_11.json",
+              "raw_edges": 32,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_12.json",
+              "raw_edges": 34,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_13.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_14.json",
+              "raw_edges": 33,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_15.json",
+              "raw_edges": 33,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_16.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_17.json",
+              "raw_edges": 31,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_18.json",
+              "raw_edges": 30,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_19.json",
+              "raw_edges": 35,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_2.json",
+              "raw_edges": 29,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_20.json",
+              "raw_edges": 31,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_692_21.json",
+              "raw_edges": 31,
+              "duplicate_occurrences": 1,
+              "parallel_endpoint_groups": 1,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.005967741935483871,
+          "duplicate_occurrence_rate": 0.00022097071839372205,
+          "mixed_label_parallel_group_rate": 1.0
+        }
+      },
+      "pair_exposure": {
+        "train": {
+          "available": true,
+          "pairs": 18000,
+          "known_pairs": 18000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 124,
+          "exposure_rate": 0.006888888888888889,
+          "pairs_with_both_parallel_graphs": 90
+        },
+        "val": {
+          "available": true,
+          "pairs": 6000,
+          "known_pairs": 6000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 39,
+          "exposure_rate": 0.0065,
+          "pairs_with_both_parallel_graphs": 30
+        },
+        "test": {
+          "available": true,
+          "pairs": 6000,
+          "known_pairs": 6000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 36,
+          "exposure_rate": 0.006,
+          "pairs_with_both_parallel_graphs": 30
+        }
+      }
+    },
+    "WIKIDATA": {
+      "all": {
+        "graphs": 51000,
+        "graphs_with_parallel_edges": 13783,
+        "nodes": 1517678,
+        "raw_edges": 1695173,
+        "undirected_endpoint_pairs": 1669278,
+        "duplicate_occurrences": 25895,
+        "parallel_endpoint_groups": 25895,
+        "same_label_parallel_groups": 9042,
+        "mixed_label_parallel_groups": 16853,
+        "same_directed_duplicate_groups": 0,
+        "max_multiplicity": 2,
+        "multiplicity_histogram": {
+          "1": 1643383,
+          "2": 25895
+        },
+        "top_affected_graphs": [
+          {
+            "split": "val",
+            "graph": "graphPair_371_14.json",
+            "raw_edges": 90,
+            "duplicate_occurrences": 41,
+            "parallel_endpoint_groups": 41,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_18.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 39,
+            "parallel_endpoint_groups": 39,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_23.json",
+            "raw_edges": 87,
+            "duplicate_occurrences": 39,
+            "parallel_endpoint_groups": 39,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_32.json",
+            "raw_edges": 91,
+            "duplicate_occurrences": 39,
+            "parallel_endpoint_groups": 39,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_33.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 39,
+            "parallel_endpoint_groups": 39,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_5.json",
+            "raw_edges": 89,
+            "duplicate_occurrences": 39,
+            "parallel_endpoint_groups": 39,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_13.json",
+            "raw_edges": 89,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_17.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_21.json",
+            "raw_edges": 89,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_25.json",
+            "raw_edges": 85,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_30.json",
+            "raw_edges": 89,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_35.json",
+            "raw_edges": 86,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_43.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_44.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 38,
+            "parallel_endpoint_groups": 38,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_10.json",
+            "raw_edges": 89,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_2.json",
+            "raw_edges": 86,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_26.json",
+            "raw_edges": 86,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_28.json",
+            "raw_edges": 85,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_3.json",
+            "raw_edges": 87,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          },
+          {
+            "split": "val",
+            "graph": "graphPair_371_6.json",
+            "raw_edges": 88,
+            "duplicate_occurrences": 37,
+            "parallel_endpoint_groups": 37,
+            "max_multiplicity": 2
+          }
+        ],
+        "graph_parallel_rate": 0.27025490196078433,
+        "duplicate_occurrence_rate": 0.01527572702019204,
+        "mixed_label_parallel_group_rate": 0.650820621741649
+      },
+      "by_split": {
+        "train": {
+          "graphs": 30600,
+          "graphs_with_parallel_edges": 8008,
+          "nodes": 905369,
+          "raw_edges": 1003856,
+          "undirected_endpoint_pairs": 989848,
+          "duplicate_occurrences": 14008,
+          "parallel_endpoint_groups": 14008,
+          "same_label_parallel_groups": 5260,
+          "mixed_label_parallel_groups": 8748,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 975840,
+            "2": 14008
+          },
+          "top_affected_graphs": [
+            {
+              "split": "train",
+              "graph": "graphPair_170_15.json",
+              "raw_edges": 57,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_33.json",
+              "raw_edges": 56,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_268_27.json",
+              "raw_edges": 55,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_13.json",
+              "raw_edges": 45,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_37.json",
+              "raw_edges": 47,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_38.json",
+              "raw_edges": 46,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_975_12.json",
+              "raw_edges": 46,
+              "duplicate_occurrences": 11,
+              "parallel_endpoint_groups": 11,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_13.json",
+              "raw_edges": 52,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_19.json",
+              "raw_edges": 54,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_23.json",
+              "raw_edges": 57,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_24.json",
+              "raw_edges": 55,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_27.json",
+              "raw_edges": 54,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_29.json",
+              "raw_edges": 55,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_32.json",
+              "raw_edges": 59,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_170_6.json",
+              "raw_edges": 56,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_268_2.json",
+              "raw_edges": 49,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_1.json",
+              "raw_edges": 47,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_11.json",
+              "raw_edges": 44,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_12.json",
+              "raw_edges": 43,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "train",
+              "graph": "graphPair_659_14.json",
+              "raw_edges": 45,
+              "duplicate_occurrences": 10,
+              "parallel_endpoint_groups": 10,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.26169934640522874,
+          "duplicate_occurrence_rate": 0.013954192633206356,
+          "mixed_label_parallel_group_rate": 0.6245002855511137
+        },
+        "val": {
+          "graphs": 10200,
+          "graphs_with_parallel_edges": 3042,
+          "nodes": 305038,
+          "raw_edges": 345154,
+          "undirected_endpoint_pairs": 338269,
+          "duplicate_occurrences": 6885,
+          "parallel_endpoint_groups": 6885,
+          "same_label_parallel_groups": 1923,
+          "mixed_label_parallel_groups": 4962,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 331384,
+            "2": 6885
+          },
+          "top_affected_graphs": [
+            {
+              "split": "val",
+              "graph": "graphPair_371_14.json",
+              "raw_edges": 90,
+              "duplicate_occurrences": 41,
+              "parallel_endpoint_groups": 41,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_18.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 39,
+              "parallel_endpoint_groups": 39,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_23.json",
+              "raw_edges": 87,
+              "duplicate_occurrences": 39,
+              "parallel_endpoint_groups": 39,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_32.json",
+              "raw_edges": 91,
+              "duplicate_occurrences": 39,
+              "parallel_endpoint_groups": 39,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_33.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 39,
+              "parallel_endpoint_groups": 39,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_5.json",
+              "raw_edges": 89,
+              "duplicate_occurrences": 39,
+              "parallel_endpoint_groups": 39,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_13.json",
+              "raw_edges": 89,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_17.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_21.json",
+              "raw_edges": 89,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_25.json",
+              "raw_edges": 85,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_30.json",
+              "raw_edges": 89,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_35.json",
+              "raw_edges": 86,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_43.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_44.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 38,
+              "parallel_endpoint_groups": 38,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_10.json",
+              "raw_edges": 89,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_2.json",
+              "raw_edges": 86,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_26.json",
+              "raw_edges": 86,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_28.json",
+              "raw_edges": 85,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_3.json",
+              "raw_edges": 87,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "val",
+              "graph": "graphPair_371_6.json",
+              "raw_edges": 88,
+              "duplicate_occurrences": 37,
+              "parallel_endpoint_groups": 37,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.29823529411764704,
+          "duplicate_occurrence_rate": 0.019947617585193856,
+          "mixed_label_parallel_group_rate": 0.7206971677559912
+        },
+        "test": {
+          "graphs": 10200,
+          "graphs_with_parallel_edges": 2733,
+          "nodes": 307271,
+          "raw_edges": 346163,
+          "undirected_endpoint_pairs": 341161,
+          "duplicate_occurrences": 5002,
+          "parallel_endpoint_groups": 5002,
+          "same_label_parallel_groups": 1859,
+          "mixed_label_parallel_groups": 3143,
+          "same_directed_duplicate_groups": 0,
+          "max_multiplicity": 2,
+          "multiplicity_histogram": {
+            "1": 336159,
+            "2": 5002
+          },
+          "top_affected_graphs": [
+            {
+              "split": "test",
+              "graph": "graphPair_253_40.json",
+              "raw_edges": 50,
+              "duplicate_occurrences": 7,
+              "parallel_endpoint_groups": 7,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_9.json",
+              "raw_edges": 41,
+              "duplicate_occurrences": 7,
+              "parallel_endpoint_groups": 7,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_16.json",
+              "raw_edges": 49,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_23.json",
+              "raw_edges": 49,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_30.json",
+              "raw_edges": 49,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_39.json",
+              "raw_edges": 51,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_48.json",
+              "raw_edges": 48,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_49.json",
+              "raw_edges": 49,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_5.json",
+              "raw_edges": 47,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_278_19.json",
+              "raw_edges": 42,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_278_36.json",
+              "raw_edges": 42,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_28.json",
+              "raw_edges": 37,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_29.json",
+              "raw_edges": 37,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_34.json",
+              "raw_edges": 40,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_42.json",
+              "raw_edges": 38,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_43.json",
+              "raw_edges": 40,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_921_45.json",
+              "raw_edges": 39,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_941_11.json",
+              "raw_edges": 43,
+              "duplicate_occurrences": 6,
+              "parallel_endpoint_groups": 6,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_213_19.json",
+              "raw_edges": 45,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 2
+            },
+            {
+              "split": "test",
+              "graph": "graphPair_253_1.json",
+              "raw_edges": 48,
+              "duplicate_occurrences": 5,
+              "parallel_endpoint_groups": 5,
+              "max_multiplicity": 2
+            }
+          ],
+          "graph_parallel_rate": 0.26794117647058824,
+          "duplicate_occurrence_rate": 0.014449840104228355,
+          "mixed_label_parallel_group_rate": 0.6283486605357856
+        }
+      },
+      "pair_exposure": {
+        "train": {
+          "available": true,
+          "pairs": 30000,
+          "known_pairs": 30000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 7874,
+          "exposure_rate": 0.2624666666666667,
+          "pairs_with_both_parallel_graphs": 6700
+        },
+        "val": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 2988,
+          "exposure_rate": 0.2988,
+          "pairs_with_both_parallel_graphs": 2700
+        },
+        "test": {
+          "available": true,
+          "pairs": 10000,
+          "known_pairs": 10000,
+          "unknown_graph_files": [],
+          "pairs_with_at_least_one_parallel_graph": 2687,
+          "exposure_rate": 0.2687,
+          "pairs_with_both_parallel_graphs": 2300
+        }
+      }
+    }
+  }
+}

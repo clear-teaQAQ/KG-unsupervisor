@@ -97,6 +97,9 @@ class V19GeneratorEdgeGuidanceTrainer(V18OfficialMatchedEdgeTrainer):
                 "generator_edge_gate_init": float(
                     getattr(self.args, "v19_gate_init", 0.0)
                 ),
+                "generator_edge_gate_eval_override_raw": getattr(
+                    self.args, "v19_eval_generator_gate_raw_override", None
+                ),
                 "runtime_abort_audits": False,
                 "ground_truth_changed": False,
                 "preference_definition_changed": False,
@@ -117,4 +120,3 @@ class V19GeneratorEdgeGuidanceTrainer(V18OfficialMatchedEdgeTrainer):
                 }
             )
         return metadata
-
